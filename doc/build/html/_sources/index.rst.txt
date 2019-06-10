@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Bienvenu sur Manjaro Memo Documentation's documentation!
-======================================================
+Bienvenu sur Manjaro Memo Documentation !
+=========================================
 
 Le but n'est pas là aussi de présenter un nième tutoriel sur Manjaro mais plutôt un condensé des informations que j'utilise déjà mais sous la forme d'un memo qui me servira et qui servira aussi à tout ceux et celles qui l' utilisent au quotidien. Le tout ordonné en un seul endroit.
 
@@ -20,7 +20,7 @@ Et rentrons maintenant dans le vif du sujet.
    Introduction
    Pacman
    Mise à jour système
-   MHWD
+   Manjaro HardWare Detection
    Aide
 
 
