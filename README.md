@@ -1,4 +1,4 @@
-# manjaro-memo-documentation
+# Manjaro Memo Documentation
 
 Ce projet, ainsi que tous mes projets memo-documentation ont été commençé il y a 3 ans sur Tuleap en étant développé avec Sphinx.
 Tuleap a ouvert sa plateforme quand Microsoft a acquis Github et comme tout libriste, on n'aime pas voir Microsoft s'initier dans 
@@ -8,7 +8,7 @@ Lors de l'import de certains de ces projets sur Github (l'import est d'une facil
 Heureusement pour moi, je n'ai pas tout importé.!!!!
 
 
-# objectif de ce mémo personnel réalisé en Français
+# Objectif de ce mémo personnel réalisé en Français
 
 Je dispose de pleins de notes sur Manjaro qui est ma distribution depuis 8 ans déjà (en 2021). Quand je pars de la maison comme en vacances, j'ai tendance à apporter pas mal de documentation.
 Ce qui vous vous en doutez prend pas mal de place et de ....poids. De plus, c'est assez fastidieux de rechercher une information dans ma documentation papier
@@ -21,7 +21,7 @@ Dans ce cas, après test (si c'est faisable), j'inclurerait votre fork (vous sav
 D'autres choses viendront.
 
 
-# manjaro
+# Manjaro
 
 Manjaro est à Archlinux ce qu'est Ubuntu à Debian. Une distribution plus facile à installer et à utiliser que sa "Mère". Tout en gardant l'esprit Archlinux, cad Rolling-release, compilé.
 Elle dispose aussi d'outils en CLI et Graphiques qui lui sont propres tel que Mhwd-kernel (pour la gestion des kernels) et Mhwd (pour la gestion des cartes graphiques et du matériel en général).
