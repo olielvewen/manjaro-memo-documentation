@@ -10,13 +10,13 @@ Heureusement pour moi, je n'ai pas tout importé.!!!!
 
 # Objectif de ce mémo personnel réalisé en Français
 
-Je dispose de pleins de notes sur Manjaro qui est ma distribution depuis 8 ans déjà (en 2021). Quand je pars de la maison comme en vacances, j'ai tendance à apporter pas mal de documentation.
+Je dispose de pleins de notes sur Manjaro qui est ma distribution depuis 9 ans déjà (en 2022). Quand je pars de la maison comme en vacances, j'ai tendance à apporter pas mal de documentation.
 Ce qui vous vous en doutez prend pas mal de place et de ....poids. De plus, c'est assez fastidieux de rechercher une information dans ma documentation papier
 .C'est une des raisons de la création de ce mémo. Ce condensé a aussi pour but un gain de temps et d’efforts pour moi.
 
-L'autre raison était plutot du côté programmation. Sphinx permet en effet de belles documentations, y compris du code et des opérations mathématiques assez évolutés.
-Cette documentation est avant tout développée pour moi. Mais comme je sais par expérience que je ne suis pas seul dans ce cas, elle peut vous servir à vous soit telle quelle soit avec vos propres modifications.
-Dans ce cas, après test (si c'est faisable), j'inclurerait votre fork (vous savez comment on fait) avec joie. Mais respectez mes conditions d'écritures.
+L'autre raison était plutôt du côté programmation. Sphinx permet en effet de belles documentations, y compris du code et des opérations mathématiques assez évolués.
+Cette documentation est avant tout développée pour moi. Mais comme je sais par expérience que je ne suis pas seul dans ce cas, elle peut aussi vous servir soit telle quelle soit avec vos propres modifications.
+Dans ce cas, après test (si c'est faisable), j'inclurerais votre fork (vous savez comment on fait) avec joie. Mais respectez mes conditions d'écritures.
 
 D'autres choses viendront.
 
