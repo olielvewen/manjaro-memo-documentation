@@ -1,11 +1,12 @@
 # Manjaro Memo Documentation
 
-Ce projet, ainsi que tous mes projets memo-documentation ont été commençé il y a 3 ans sur Tuleap en étant développé avec Sphinx.
+Ce projet, ainsi que tous mes projets memo-documentation, ont été commençé il y a quelques années sur Tuleap tout en étant développé avec Sphinx.
 Tuleap a ouvert sa plateforme quand Microsoft a acquis Github et comme tout libriste, on n'aime pas voir Microsoft s'initier dans 
 des logiciels libres comme l'était Github. De plus Tuleap dispose d'un ensemble de logiciels libres aidant les développeurs dans la gestion de leur projet.
 Cependant, Tuleap est un logiciel complexe pour quelqu'un qui comme moi n'est pas programmeur à la base. Et comme tout était en anglais au niveau documentation, ce n'est pas facile.
 Lors de l'import de certains de ces projets sur Github (l'import est d'une facilité déconcertante) je me suis rendu compte que la documentation était maintenant disponible en Français.
 Heureusement pour moi, je n'ai pas tout importé.!!!!
+Cependant, j'utilise Github depuis de nombreuses années et je suis habitué à cette plateforme. Je vais donc continuer ce projet sur Github, ce qui ne m'empechera pas, à temps vraiment perdu, d'approfondir Tuleap.
 
 
 # Objectif de ce mémo personnel réalisé en Français
