@@ -44,3 +44,12 @@ et du temps que j'y consacrerai.
 
 Si cela vous est utile et si vous aussi, vous vous trouvez dans le même cas
 que moi, vous pouvez aussi contribuer à cet mémo.
+
+Si vous savez les points qui sont abordés et que vous voulez partager vos 
+connaissances en ce lieu, faites-le. ce sera avec plaisir.
+
+Notes
+=====
+
+Pour l'instant, c'est brouillon et un peu n'importe quoi. Je modifierai
+la structure au fil du temps et après tête reposée.
