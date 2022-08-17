@@ -1040,7 +1040,7 @@ Dans KDE il est intégré à Configuration System tandis que sous Cinnamon il es
 
 Pour KDE, mhwd (carte graphique), mhwd hardware (avec tout le hardware) puis mhwd-kernel (les kernels)
 
-.. figure:: ./images/mhwd_kde.png
+.. figure:: ./images/mhwd_gpu_kde.png
 
 .. figure:: ./images/mhwd_hardware_kde.png
 
