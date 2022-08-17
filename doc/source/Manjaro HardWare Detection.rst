@@ -20,16 +20,17 @@ Mhwd est le nouvel outil que se dote Manjaro pour gérer les pilotes usb et pci 
 La commande se passe soit en mode utilisateur normal soit en root à laquelle ont spécifie s'il s'agit d'un périphérique usb ou pci, puis le choix du type de pilotes cad s'il est libre ou propriétaire auquel on attribut un code à 4 chiffre, ce code correspondant à un type spécifique de hardware. Le seul code connu à ce jour (vu qu'il s'agit d'un outil en développement comme je l'ai déjà sus-cité) est celui pour l'installation des cartes graphiques qui est le 0300. Ce qui nous donne donc pour les cas suivants :
 
 
-Affichage de la liste du hardware installé avec vue détaillée (ou pas), seulement les périphériques usb ou pci (ou pas)
+- Affichage de la liste du hardware installé avec vue détaillée (ou pas), seulement les périphériques usb ou pci (ou pas)
 
 .. Note:: On peut soit utiliser les diminutifs soit l’appellation exacte comme souvent dans un programme en CLI.
+
 
 
 	mhwd -lh(--listhardware) -d(--detail) --pci/--usb
 	
 Ce qui donne pour du pci détaillé par exemple sur une carte mère B550 avec un Ryzen 5700G
 
-	mhwd -lh -d --pci
+	``mhwd -lh -d --pci
 	
 	06: PCI 08.0: 0600 Host bridge
   SysFS ID: /devices/pci0000:00/0000:00:08.0
@@ -291,7 +292,10 @@ Ce qui donne pour du pci détaillé par exemple sur une carte mère B550 avec un
   SubVendor: pci 0x1043 "ASUSTeK Computer Inc."
   SubDevice: pci 0x8809 
   IRQ: 2147483648 (no events)
-  Module Alias: "pci:v00001022d00001631sv00001043sd00008809bc08sc06i00"
+  Module Alias: "pci:v00Currently running: 5.15.60-1-MANJARO (linux515)
+The following kernels are installed in your system:
+   * linux515
+001022d00001631sv00001043sd00008809bc08sc06i00"
 
 23: PCI 18.6: 0600 Host bridge
   SysFS ID: /devices/pci0000:00/0000:00:18.6
@@ -551,11 +555,11 @@ Ce qui donne pour du pci détaillé par exemple sur une carte mère B550 avec un
   Vendor: pci 0x1022 "AMD"
   Device: pci 0x166f 
   Module Alias: "pci:v00001022d0000166Fsv00000000sd00000000bc06sc00i00"
-
+``
 
 Voici ce que l'on obtient pour l'usb toujours sur la même configuration que la commande précédante.
 
-	mhwd -lh -d --usb
+	``mhwd -lh -d --usb
 	03: USB 00.0: 10503 USB Mouse
   SysFS ID: /devices/pci0000:00/0000:00:02.1/0000:01:00.0/usb1/1-9/1-9:1.0
   SysFS BusID: 1-9:1.0
@@ -802,10 +806,11 @@ Voici ce que l'on obtient pour l'usb toujours sur la même configuration que la 
   Driver: "hub"
   Driver Modules: "usbcore"
   Module Alias: "usb:v1D6Bp0003d0515dc09dsc00dp03ic09isc00ip00in00"
+``
 
 Et une dernière la plus simple possible !
 
-	mhwd -lh
+	``mhwd -lh
 	> PCI devices:
 --------------------------------------------------------------------------------
                           TYPE            BUS   CLASS  VENDOR  DEVICE   CONFIGS
@@ -866,13 +871,13 @@ Et une dernière la plus simple possible !
                            Hub        5-0:1.0   10a00    1d6b    0002         0
                       Keyboard        3-1:1.1   10800    046d    c547         0
                            Hub        2-0:1.0   10a00    1d6b    0003         0
-
+``
 
 On identifie et liste tous les drivers installés en utilisant le même principe détaillé (ou pas), usb ou pci (ou pas) que la  commande précédante.
 
 On veut une liste détaillée.
 
-	mhwd -li -d
+	``mhwd -li -d
 	NAME:        video-linux
    ATTACHED:    PCI
    VERSION:     2018.05.04
@@ -885,12 +890,12 @@ On veut une liste détaillée.
    VENDORIDS:   1002 8086 10de 
 
 
-Warning: no installed configs for USB devices found!
+Warning: no installed configs for USB devices found!``
 
 
 On peut aussi lister les drivers disponibles globalement ou en usb ou en pci seulement.
 
-	mhwd -la
+	``mhwd -la
 	> All PCI configs:
 --------------------------------------------------------------------------------
                   NAME               VERSION          FREEDRIVER           TYPE
@@ -918,12 +923,12 @@ video-hybrid-intel-nvidia-390xx-bumblebee            2021.11.26               fa
   video-virtualmachine            2021.07.26                true            PCI
 
 
-Warning: No USB configs found!
+Warning: No USB configs found!``
 
 
 Pour lister le bon driver pour notre système avec ou sans usb/pci
 
-	mhwd -l
+	``mhwd -l
 	> 0000:0a:00.0 (0300:1002:1638) Display controller ATI Technologies Inc:
 --------------------------------------------------------------------------------
                   NAME               VERSION          FREEDRIVER           TYPE
@@ -933,7 +938,7 @@ Pour lister le bon driver pour notre système avec ou sans usb/pci
             video-vesa            2017.03.12                true            PCI
 
 
-
+``
 	
 .. Note:: Je ne peux que vous conseiller d'aller voir toutes les options de Mhwd en rajoutant la commande -h ou --help. On a même la possibilité de forcer l'installation/réinstallation d'un pilote.
 
@@ -942,7 +947,7 @@ GPU
 ---
 Pour identifier les pilotes graphique disponibles:
 
-	mhwd -l (vue détaillée optionnelle avec l'option -i) (connexion --pci ou --usb optionnelle aussi)
+	``mhwd -l (vue détaillée optionnelle avec l'option -i) (connexion --pci ou --usb optionnelle aussi)``
 	
 .. Note:: Tous les pilotes vont avoir un préfixe video- avant leur nom. La version, le type de connexion (usb ou pci) et sa licence (libre ou propriétaire) sont aussi indiqués. 
 
@@ -950,20 +955,20 @@ Ce qui nous donnes:
 
 Pour détecter et installer un pilote graphique d'une carte graphique pci avec le pilote open-source :
 
-	sudo mhwd -a pci free 0300
+	``sudo mhwd -a pci free 0300``
 	
 Pour faire la même chose mais en installant le pilote propriétaire (ex amd ou nvidia ou intel):
 
-	sudo mhwd -a pci nonfree 0300
+	``sudo mhwd -a pci nonfree 0300``
 
 	
 
 Pour forcer la réinstallation d'un pilote
-	sudo mhwd -f -i pci non_du_pilote (ex: video-nvidia) 
+	``sudo mhwd -f -i pci non_du_pilote (ex: video-nvidia) ``
 	
 
 Pour supprimer un pilote (généralement un propriétaire)
-	sudo mhwd -r pci nom_du_pilote (ex: video-nvidia)
+	``sudo mhwd -r pci nom_du_pilote (ex: video-nvidia)``
 	
 
 .. Note:: Une autre commande existait mais semble ne plus fonctionner même si le package semble être encore présent: **mhwd-gpu**. Celle-ci nous donnait un peu plus d'informations sur le gpu qui sont les suivantes (avec le résultat actuel mi-aôut 2022).
@@ -976,22 +981,22 @@ Pour supprimer un pilote (généralement un propriétaire)
 
 - Affiche le status actuel
 
-	mhwd-gpu --status                                                                                                                                                                	:: status
-	warning: could not find '/etc/X11/xorg.conf.d/90-mhwd.conf'!
+	``mhwd-gpu --status                                                                                                                                                                	:: status
+	warning: could not find '/etc/X11/xorg.conf.d/90-mhwd.conf'!``
 
 - Vérifie et répare les liens symboliques s'il le faut
 
-	mhwd-gpu --check
+	``mhwd-gpu --check``
 	
 - Affiche le fichier de configuration de Xorg
 
 	
-	sudo mhwd-gpu --setxorg '/etc/X11/xorg.conf.d/90-mhwd.conf'                                                                                                                                       
-	warning: could not find '/etc/X11/xorg.conf.d/90-mhwd.conf'!
+	``sudo mhwd-gpu --setxorg '/etc/X11/xorg.conf.d/90-mhwd.conf'                                                                                                                                       
+	warning: could not find '/etc/X11/xorg.conf.d/90-mhwd.conf'!``
 
 - Affiche les modules soit nvidia soit catalyst
 
-	sudo mhwd-gpu --setmod catalyst                                                                                       
+	``sudo mhwd-gpu --setmod catalyst                                                                                  ``     
 	                                                                             
 
 MHWD-KERNEL
@@ -1003,36 +1008,51 @@ Sous Manjaro, c'est totalement différent. On a le choix et d'ailleurs, il est f
 
 - Listons d'abord nos Kernels installés sur notre système
 
-	mhwd-kernel -li
+	``mhwd-kernel -li
+	Currently running: 5.15.60-1-MANJARO (linux515)
+The following kernels are installed in your system:
+   * linux515
+``
 
 - Listons les Kernels qui sont disponibles à l'installation
 
-	mhwd-kernel 
+	``mhwd-kernel -l
+	available kernels:
+   * linux419
+   * linux510
+   * linux515
+   * linux518
+   * linux519
+   * linux54
+   * linux515-rt
+   * linux518-rt
+   * linux519-rt
+``
 	
 - Installons le kernel 5.19 qui est le dernier lors de la création de ces lignes Sans supprimer celui-que l'on utilise ici le 
 
 
-	sudo mhwd-kernel -i linux5.19
+	``sudo mhwd-kernel -i linux5.19``
 	
 - On peut faire tout autrement à la fois en installant le 5.19 et celui que l'on utilise avec la commande rmc
 
-	sudo mhwd-kernel -i linux5.19 rmc
+	``sudo mhwd-kernel -i linux5.19 rmc``
 
 - Désinstallons un kernel autre que celui que l'on utilise
 
-	sudo mhwd-kernel -r linux4.19
+	``sudo mhwd-kernel -r linux4.19``
 	
 - Pour supprimer les headers du Kernel, on est obligé de passer par pacman
 
-	sudo pacman -R linux4.19-headers
+	``sudo pacman -R linux4.19-headers``
 	
 - Pour supprimer les modules extras, on est obligé de passer par pacman 
 
-	sudo pacman -R linux4.19-extramodules
+	``sudo pacman -R linux4.19-extramodules``
 	
 - Pour tout supprimer à la fois cad le kernel, les headers et les extras du module, on se sert de pacman
 
-	sudo pacman -R linux4.19 linux4.19-headers linux4.19-extramodules
+	``sudo pacman -R linux4.19 linux4.19-headers linux4.19-extramodules``
 
 
 Interface Graphique
@@ -1059,20 +1079,20 @@ Pour Cinnamon
 .. figure:: ./images/mhwd_kernel_cinnamon.png
 
 
-Mais pas que:
--------------
+Mais pas que
+------------
 
 En Cli notre système peut nous fournir pas mal d'informations sur  le GPU. 
 En voici quelques unes:
 
 - Identifier son GPU
-	sudo lspci | grep -i vga
+	``sudo lspci | grep -i vga``
 	
 - Pour un Ryzen 7 5700G avec IGP RDNA1 intégré
-	0a:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Cezanne (rev c8)
+	``0a:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Cezanne (rev c8)``
 
 - Pour un portable avec un Ryzen 7 5800 H avec IGP RDNA1 intégré
-	0a:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Cezanne (rev c5)
+	``0a:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Cezanne (rev c5)``
 	
 	
 .. Note:: On se rend compte que quelque soit le résultat et sous n'importe quelle forme, il provient majoritairement de la commande **dmesg**. 
