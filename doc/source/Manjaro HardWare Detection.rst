@@ -12,7 +12,9 @@ Manjaro HardWare Detection
 
 
 
-# MHWD
+MHWD
+----
+
 Mhwd est le nouvel outil que se dote Manjaro pour gérer les pilotes usb et pci dont installation et /ou la suppression de la carte graphique toujours complexe pour le débutant et le chevronné aussi. 
  
 La commande se passe soit en mode utilisateur normal soit en root à laquelle ont spécifie s'il s'agit d'un périphérique usb ou pci, puis le choix du type de pilotes cad s'il est libre ou propriétaire auquel on attribut un code à 4 chiffre, ce code correspondant à un type spécifique de hardware. Le seul code connu à ce jour (vu qu'il s'agit d'un outil en développement comme je l'ai déjà sus-cité) est celui pour l'installation des cartes graphiques qui est le 0300. Ce qui nous donne donc pour les cas suivants :
@@ -936,8 +938,8 @@ Pour lister le bon driver pour notre système avec ou sans usb/pci
 .. Note:: Je ne peux que vous conseiller d'aller voir toutes les options de Mhwd en rajoutant la commande -h ou --help. On a même la possibilité de forcer l'installation/réinstallation d'un pilote.
 
 
-## GPU
-
+GPU
+---
 Pour identifier les pilotes graphique disponibles:
 
 	mhwd -l (vue détaillée optionnelle avec l'option -i) (connexion --pci ou --usb optionnelle aussi)
@@ -968,7 +970,7 @@ Pour supprimer un pilote (généralement un propriétaire)
 
 .. Note:: Pour **Amd**, les pilotes graphiques depuis 2015/2016 sont nommés **amdgpu** pour les pilotes libres et **amdgpu-pro** pour les pilotes propriétaires.
 
-..Note:: Aucune idée pour l'instant en ce qui concerne les pilotes graphiques **Intel**.
+.. Note:: Aucune idée pour l'instant en ce qui concerne les pilotes graphiques **Intel**.
 
 .. Note:: Depuis mi 2022, **Nvidia** semble s'être décidé à enfin jouer la carte de l'open-source en proposant des pilotes libres sous le nom de **Nouveau** et ses pilotes propriétaires **Nvidia**.
 
@@ -992,48 +994,49 @@ Pour supprimer un pilote (généralement un propriétaire)
 	sudo mhwd-gpu --setmod catalyst                                                                                       
 	                                                                             
 
-# MHWD-KERNEL
- 
+MHWD-KERNEL
+----------- 
  
  Tout ce qui touche aux Kernels est un peu tabou sur la majorité des distributions Linux. D'ailleurs, on n'a souvent qu'un Kernel d'installé, celui-qui vient avec celle-ci.
  
 Sous Manjaro, c'est totalement différent. On a le choix et d'ailleurs, il est fortement conseillé d'avoir deux kernels stables en plus du kernel que l'on utilise. Et C'est d'une facilité déconcertant. Le mieux est de voir avec quelques exemples la puissance et la simplicité de cet outil.
 
-Listons d'abord nos Kernels installés sur notre système
+- Listons d'abord nos Kernels installés sur notre système
 
 	mhwd-kernel -li
 
-Listons les Kernels qui sont disponibles à l'installation
+- Listons les Kernels qui sont disponibles à l'installation
 
 	mhwd-kernel 
 	
-Installons le kernel 5.19 qui est le dernier lors de la création de ces lignes Sans supprimer celui-que l'on utilise ici le 
+- Installons le kernel 5.19 qui est le dernier lors de la création de ces lignes Sans supprimer celui-que l'on utilise ici le 
 
 
 	sudo mhwd-kernel -i linux5.19
 	
-On peut faire tout autrement à la fois en installant le 5.19 et celui que l'on utilise avec la commande rmc
+- On peut faire tout autrement à la fois en installant le 5.19 et celui que l'on utilise avec la commande rmc
 
 	sudo mhwd-kernel -i linux5.19 rmc
 
-Desinstallons un kernel autre que celui que l'on utilise
+- Désinstallons un kernel autre que celui que l'on utilise
 
 	sudo mhwd-kernel -r linux4.19
 	
-Pour supprimer les headers du Kernel, on est obligé de passer par pacman
+- Pour supprimer les headers du Kernel, on est obligé de passer par pacman
 
 	sudo pacman -R linux4.19-headers
 	
-Pour supprimer les modules extras, on est obligé de passer par pacman 
+- Pour supprimer les modules extras, on est obligé de passer par pacman 
 
 	sudo pacman -R linux4.19-extramodules
 	
-Pour tout supprimer à la fois cad le kernel, les headers et les extras du module, on se sert de pacman
+- Pour tout supprimer à la fois cad le kernel, les headers et les extras du module, on se sert de pacman
 
 	sudo pacman -R linux4.19 linux4.19-headers linux4.19-extramodules
 
 
-# Interface Graphique
+Interface Graphique
+-------------------
 
 Pour cela, il suffit d'aller dans Configuration System. Toutefois, le résultat graphique peut varier suivant l'environnement que vous utilisez. 
 Dans KDE il est intégré à Configuration System tandis que sous Cinnamon il est disponible séparément. 
@@ -1056,18 +1059,19 @@ Pour Cinnamon
 .. figure:: ./images/mhwd_kernel_cinnamon.png
 
 
-# Mais pas que:
+Mais pas que:
+-------------
 
 En Cli notre système peut nous fournir pas mal d'informations sur  le GPU. 
 En voici quelques unes:
 
-Identifier son GPU
+- Identifier son GPU
 	sudo lspci | grep -i vga
 	
-Pour un Ryzen 7 5700G avec IGP RDNA1 intégré
+- Pour un Ryzen 7 5700G avec IGP RDNA1 intégré
 	0a:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Cezanne (rev c8)
 
-Pour un portable avec un Ryzen 7 5800 H avec IGP RDNA1 intégré
+- Pour un portable avec un Ryzen 7 5800 H avec IGP RDNA1 intégré
 	0a:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Cezanne (rev c5)
 	
 	
