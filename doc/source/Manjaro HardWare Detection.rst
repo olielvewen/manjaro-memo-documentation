@@ -6,7 +6,7 @@ Manjaro HardWare Detection
 
 - **mhwd** : est la commande de base, active dés le début qui permet la détection et la configuration du hardware qu'il soit pci ou usb.
 
-..Warning:: Noter que cet outil est encore en développement et n'est capable pour l'instant que d'installer les drivers graphiques des GPU.
+.. Warning:: Noter que cet outil est encore en développement et n'est capable pour l'instant que d'installer les drivers graphiques des GPU.
 
 - **mhwd-kernel** : est la commande pour gérer son ou plutôt ses kernels. C'est une des grandes possibilités que permet **Manjaro** c'est d'avoir des Kernels aux pluriels. Des LTS en général et parfois aussi, des kernels intermédiaires afin de bénéficier soit de nouvelles fonctionnalités non incluses dans les LTS soit des corrections de bogues ou les deux.
 
@@ -20,7 +20,7 @@ La commande se passe soit en mode utilisateur normal soit en root à laquelle on
 
 Affichage de la liste du hardware installé avec vue détaillée (ou pas), seulement les périphériques usb ou pci (ou pas)
 
-..Note:: On peut soit utiliser les diminutifs soit l’appellation exacte comme souvent dans un programme en CLI.
+.. Note:: On peut soit utiliser les diminutifs soit l’appellation exacte comme souvent dans un programme en CLI.
 
 
 	mhwd -lh(--listhardware) -d(--detail) --pci/--usb
@@ -801,7 +801,7 @@ Voici ce que l'on obtient pour l'usb toujours sur la même configuration que la 
   Driver Modules: "usbcore"
   Module Alias: "usb:v1D6Bp0003d0515dc09dsc00dp03ic09isc00ip00in00"
 
-Et une dernière la plus simple possible
+Et une dernière la plus simple possible !
 
 	mhwd -lh
 	> PCI devices:
@@ -933,7 +933,7 @@ Pour lister le bon driver pour notre système avec ou sans usb/pci
 
 
 	
-..Note:: Je ne peux que vous conseiller d'aller voir toutes les options de Mhwd en rajoutant la commande -h ou --help. On a même la possibilité de forcer l'installation/réinstallation d'un pilote.
+.. Note:: Je ne peux que vous conseiller d'aller voir toutes les options de Mhwd en rajoutant la commande -h ou --help. On a même la possibilité de forcer l'installation/réinstallation d'un pilote.
 
 
 ## GPU
@@ -942,7 +942,7 @@ Pour identifier les pilotes graphique disponibles:
 
 	mhwd -l (vue détaillée optionnelle avec l'option -i) (connexion --pci ou --usb optionnelle aussi)
 	
-..Note:: Tous les pilotes vont avoir un préfixe video- avant leur nom. La version, le type de connexion (usb ou pci) et sa licence (libre ou propriétaire) sont aussi indiqués. 
+.. Note:: Tous les pilotes vont avoir un préfixe video- avant leur nom. La version, le type de connexion (usb ou pci) et sa licence (libre ou propriétaire) sont aussi indiqués. 
 
 Ce qui nous donnes:
 
@@ -964,13 +964,13 @@ Pour supprimer un pilote (généralement un propriétaire)
 	sudo mhwd -r pci nom_du_pilote (ex: video-nvidia)
 	
 
-..Note:: Une autre commande existait mais semble ne plus fonctionner même si le package semble être encore présent: **mhwd-gpu**. Celle-ci nous donnait un peu plus d'informations sur le gpu qui sont les suivantes (avec le résultat actuel mi-aôut 2022).
+.. Note:: Une autre commande existait mais semble ne plus fonctionner même si le package semble être encore présent: **mhwd-gpu**. Celle-ci nous donnait un peu plus d'informations sur le gpu qui sont les suivantes (avec le résultat actuel mi-aôut 2022).
 
-..Note:: Pour **Amd**, les pilotes graphiques depuis 2015/2016 sont nommés **amdgpu** pour les pilotes libres et **amdgpu-pro** pour les pilotes propriétaires.
+.. Note:: Pour **Amd**, les pilotes graphiques depuis 2015/2016 sont nommés **amdgpu** pour les pilotes libres et **amdgpu-pro** pour les pilotes propriétaires.
 
 ..Note:: Aucune idée pour l'instant en ce qui concerne les pilotes graphiques **Intel**.
 
-..Note:: Depuis mi 2022, **Nvidia** semble s'être décidé à enfin jouer la carte de l'open-source en proposant des pilotes libres sous le nom de **Nouveau** et ses pilotes propriétaires **Nvidia**.
+.. Note:: Depuis mi 2022, **Nvidia** semble s'être décidé à enfin jouer la carte de l'open-source en proposant des pilotes libres sous le nom de **Nouveau** et ses pilotes propriétaires **Nvidia**.
 
 - Affiche le status actuel
 
@@ -1038,18 +1038,22 @@ Pour tout supprimer à la fois cad le kernel, les headers et les extras du modul
 Pour cela, il suffit d'aller dans Configuration System. Toutefois, le résultat graphique peut varier suivant l'environnement que vous utilisez. 
 Dans KDE il est intégré à Configuration System tandis que sous Cinnamon il est disponible séparément. 
 
-Pour KDE, mhwd puis mhwd-kernel
+Pour KDE, mhwd (carte graphique), mhwd hardware (avec tout le hardware) puis mhwd-kernel (les kernels)
 
 .. figure:: ./images/mhwd_kde.png
 
-.. figure:: ./images/mhwd-kernel_kde.png
+.. figure:: ./images/mhwd_hardware_kde.png
+
+.. figure:: ./images/mhwd_kernel_kde.png
 
 
 Pour Cinnamon
 
 .. figure:: ./images/mhwd_cinnamon.png
 
-.. figure:: ./images/mhwd-kernel_cinnamon.png
+.. figure:: ./images/mhwd_hardware_cinnamon.png
+
+.. figure:: ./images/mhwd_kernel_cinnamon.png
 
 
 # Mais pas que:
@@ -1067,4 +1071,4 @@ Pour un portable avec un Ryzen 7 5800 H avec IGP RDNA1 intégré
 	0a:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Cezanne (rev c5)
 	
 	
-..Note:: On se rend compte que quelque soit le résultat et sous n'importe quelle forme, il provient de la commande **dmesg**. 
+.. Note:: On se rend compte que quelque soit le résultat et sous n'importe quelle forme, il provient majoritairement de la commande **dmesg**. 
