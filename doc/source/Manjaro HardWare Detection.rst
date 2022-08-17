@@ -22,43 +22,44 @@ La commande se passe soit en mode utilisateur normal soit en root à laquelle on
 
 - Affichage de la liste du hardware installé avec vue détaillée (ou pas), seulement les périphériques usb ou pci (ou pas)
 
+	``mhwd -lh(--listhardware) -d(--detail) --pci/--usb``
+
 .. Note:: On peut soit utiliser les diminutifs soit l’appellation exacte comme souvent dans un programme en CLI.
-
-
-
-	mhwd -lh(--listhardware) -d(--detail) --pci/--usb
 	
+
 Ce qui donne pour du pci détaillé par exemple sur une carte mère B550 avec un Ryzen 5700G
 
-	``mhwd -lh -d --pci
+	``mhwd -lh -d --pci``
 	
-	06: PCI 08.0: 0600 Host bridge
-  SysFS ID: /devices/pci0000:00/0000:00:08.0
-  SysFS BusID: 0000:00:08.0
-  Hardware Class: bridge
-  Model: "AMD Renoir PCIe Dummy Host Bridge"
-  Vendor: pci 0x1022 "AMD"
-  Device: pci 0x1632 "Renoir PCIe Dummy Host Bridge"
-  Module Alias: "pci:v00001022d00001632sv00000000sd00000000bc06sc00i00"
 
-07: PCI a00.6: 0403 Audio device
-  SysFS ID: /devices/pci0000:00/0000:00:08.1/0000:0a:00.6
-  SysFS BusID: 0000:0a:00.6
-  Hardware Class: sound
-  Model: "AMD Family 17h (Models 10h-1fh) HD Audio Controller"
-  Vendor: pci 0x1022 "AMD"
-  Device: pci 0x15e3 "Family 17h (Models 10h-1fh) HD Audio Controller"
-  SubVendor: pci 0x1043 "ASUSTeK Computer Inc."
-  SubDevice: pci 0x87c5 
-  Driver: "snd_hda_intel"
-  Driver Modules: "snd_hda_intel"
-  Memory Range: 0xfca80000-0xfca87fff (rw,non-prefetchable)
-  IRQ: 102 (1486 events)
-  Module Alias: "pci:v00001022d000015E3sv00001043sd000087C5bc04sc03i00"
-  Driver Info #0:
-    Driver Status: snd_hda_intel is active
-    Driver Activation Cmd: "modprobe snd_hda_intel"
-  Attached to: #26 (PCI bridge)
+
+|  06: PCI 08.0: 0600 Host bridge
+	  SysFS ID: /devices/pci0000:00/0000:00:08.0|	  SysFS BusID: 0000:00:08.0
+	  Hardware Class: bridge
+	  Model: "AMD Renoir PCIe Dummy Host Bridge"
+	  Vendor: pci 0x1022 "AMD"
+	  Device: pci 0x1632 "Renoir PCIe Dummy Host Bridge"
+      Module Alias: "pci:v00001022d00001632sv00000000sd00000000bc06sc00i00"...
+
+
+| 07: PCI a00.6: 0403 Audio device
+  |SysFS ID: /devices/pci0000:00/0000:00:08.1/0000:0a:00.6
+  |SysFS BusID: 0000:0a:00.6
+  |Hardware Class: sound
+  |Model: "AMD Family 17h (Models 10h-1fh) HD Audio Controller"
+  |Vendor: pci 0x1022 "AMD"
+  |Device: pci 0x15e3 "Family 17h (Models 10h-1fh) HD Audio Controller"
+  |SubVendor: pci 0x1043 "ASUSTeK Computer Inc."
+  |SubDevice: pci 0x87c5 
+  |Driver: "snd_hda_intel"
+  |Driver Modules: "snd_hda_intel"
+  |Memory Range: 0xfca80000-0xfca87fff (rw,non-prefetchable)
+  |IRQ: 102 (1486 events)
+  |Module Alias: "pci:v00001022d000015E3sv00001043sd000087C5bc04sc03i00"
+  |Driver Info #0:
+    |Driver Status: snd_hda_intel is active
+    |Driver Activation Cmd: "modprobe snd_hda_intel"
+  |Attached to: #26 (PCI bridge)
 
 08: PCI 18.3: 0600 Host bridge
   SysFS ID: /devices/pci0000:00/0000:00:18.3
@@ -806,140 +807,108 @@ Voici ce que l'on obtient pour l'usb toujours sur la même configuration que la 
   Driver: "hub"
   Driver Modules: "usbcore"
   Module Alias: "usb:v1D6Bp0003d0515dc09dsc00dp03ic09isc00ip00in00"
-``
+
 
 Et une dernière la plus simple possible !
 
-	``mhwd -lh
-	> PCI devices:
---------------------------------------------------------------------------------
-                          TYPE            BUS   CLASS  VENDOR  DEVICE   CONFIGS
---------------------------------------------------------------------------------
-                        Bridge   0000:00:08.0    0600    1022    1632         0
-         Multimedia controller   0000:0a:00.6    0403    1022    15e3         0
-                        Bridge   0000:00:18.3    0600    1022    166d         0
-       Mass storage controller   0000:09:00.0    0108    144d    a808         0
-         Serial bus controller   0000:0a:00.4    0c03    1022    1639         0
-                        Bridge   0000:00:18.1    0600    1022    166b         0
-                        Bridge   0000:02:00.0    0604    1022    43ea         0
-                        Bridge   0000:00:01.0    0600    1022    1632         0
-            Network controller   0000:08:00.0    0200    8086    15f3         0
-                        Bridge   0000:01:00.2    0604    1022    43e9         0
-         Encryption controller   0000:0a:00.2    1080    1022    15df         0
-                        Bridge   0000:02:03.0    0604    1022    43ea         0
-                        Bridge   0000:00:14.3    0601    1022    790e         0
-         Serial bus controller   0000:01:00.0    0c03    1022    43ee         0
-                        Bridge   0000:00:02.1    0604    1022    1634         0
-            Display controller   0000:0a:00.0    0300    1002    1638         3
-     Generic system peripheral   0000:00:00.2    0806    1022    1631         0
-                        Bridge   0000:00:18.6    0600    1022    1670         0
-                        Bridge   0000:02:09.0    0604    1022    43ea         0
-                        Bridge   0000:00:00.0    0600    1022    1630         0
-                        Bridge   0000:00:08.1    0604    1022    1635         0
-                        Bridge   0000:00:18.4    0600    1022    166e         0
-                        Bridge   0000:02:02.0    0604    1022    43ea         0
-                        Bridge   0000:00:18.2    0600    1022    166c         0
-         Serial bus controller   0000:0a:00.3    0c03    1022    1639         0
-                        Bridge   0000:00:18.0    0600    1022    166a         0
-                        Bridge   0000:02:08.0    0604    1022    43ea         0
-       Mass storage controller   0000:01:00.1    0106    1022    43eb         0
-                        Bridge   0000:00:02.2    0604    1022    1634         0
-         Multimedia controller   0000:0a:00.1    0403    1002    1637         0
-            Network controller   0000:04:00.0    0200    8086    2723         0
-                        Bridge   0000:02:01.0    0604    1022    43ea         0
-                        Bridge   0000:00:02.0    0600    1022    1632         0
-                        Bridge   0000:00:18.7    0600    1022    1671         0
-         Serial bus controller   0000:00:14.0    0c05    1022    790b         0
-                        Bridge   0000:00:18.5    0600    1022    166f         0
+	``mhwd -lh``
 
+	``PCI devices:``
 
-> USB devices:
---------------------------------------------------------------------------------
-                          TYPE            BUS   CLASS  VENDOR  DEVICE   CONFIGS
---------------------------------------------------------------------------------
-                         Mouse        1-9:1.0   10503    1532    0083         0
-                           Hub        6-0:1.0   10a00    1d6b    0003         0
-           Unclassified device        1-6:1.2    0000    0b05    1939         0
-                           Hub        3-0:1.0   10a00    1d6b    0002         0
-              Bluetooth Device      1-7.2:1.0   11500    8087    0029         0
-           Unclassified device        3-1:1.2    0000    046d    c547         0
-           Unclassified device        1-9:1.1    0000    1532    0083         0
-                           Hub        1-7:1.0   10a00    05e3    0608         0
-                         Mouse        3-1:1.0   10503    046d    c547         0
-                           Hub        4-0:1.0   10a00    1d6b    0003         0
-                           Hub        1-0:1.0   10a00    1d6b    0002         0
-                           Hub        5-0:1.0   10a00    1d6b    0002         0
-                      Keyboard        3-1:1.1   10800    046d    c547         0
-                           Hub        2-0:1.0   10a00    1d6b    0003         0
-``
+.. figure:: ./images/pci_mhwd.png
+
+.. figure:: ./images/usb_devices.png
+
 
 On identifie et liste tous les drivers installés en utilisant le même principe détaillé (ou pas), usb ou pci (ou pas) que la  commande précédante.
 
 On veut une liste détaillée.
 
-	``mhwd -li -d
-	NAME:        video-linux
-   ATTACHED:    PCI
-   VERSION:     2018.05.04
-   INFO:        Standard open source drivers.
-   PRIORITY:    2
-   FREEDRIVER:  true
-   DEPENDS:     -
-   CONFLICTS:   -
-   CLASSIDS:    0300 0380 0302 
-   VENDORIDS:   1002 8086 10de 
+	``mhwd -li -d`` 
 
+  
+  
+  
+  +------------+-------------------------------+
+  | Name:      |  video-linux                  |
+  | ATTACHED:  |  PCI                          |
+  | VERSION:   |  2018.05.04                   |
+  | INFO:      |  Standard open source drivers.|
+  | PRIORITY:  |  2                            |
+  | FREEDRIVER:|  true                         |
+  | DEPENDS:   |  -                            |
+  | CONFLICTS: |  -                            | 
+  | CLASSIDS:  |  0300 0380 0302               | 
+  | VENDORIDS: |  1002 8086 10de               | 
+  +------------+-------------------------------+
 
-Warning: no installed configs for USB devices found!``
+	``Warning: no installed configs for USB devices found!``
 
 
 On peut aussi lister les drivers disponibles globalement ou en usb ou en pci seulement.
 
-	``mhwd -la
-	> All PCI configs:
---------------------------------------------------------------------------------
-                  NAME               VERSION          FREEDRIVER           TYPE
---------------------------------------------------------------------------------
-   network-broadcom-wl            2018.10.07               false            PCI
-     network-rt3562sta            2013.12.07                true            PCI
-       network-slmodem            2013.12.07                true            PCI
-         network-r8168            2016.04.20                true            PCI
-            video-vesa            2017.03.12                true            PCI
-          video-sisusb            2020.01.18                true            PCI
-    video-nvidia-470xx            2021.11.04               false            PCI
-           video-linux            2018.05.04                true            PCI
-          video-nvidia            2021.11.04               false            PCI
-video-hybrid-intel-nvidia-470xx-prime            2021.11.04               false            PCI
-       video-rendition            2020.01.18                true            PCI
-    video-nvidia-390xx            2021.11.26               false            PCI
-     video-modesetting            2020.01.13                true            PCI
-              video-s3            2020.01.18                true            PCI
-video-hybrid-amd-nvidia-prime            2021.11.04               false            PCI
-video-hybrid-intel-nvidia-prime            2021.11.04               false            PCI
-video-hybrid-amd-nvidia-470xx-prime            2021.11.04               false            PCI
-          video-voodoo            2017.03.12                true            PCI
-      video-openchrome            2020.01.18                true            PCI
-video-hybrid-intel-nvidia-390xx-bumblebee            2021.11.26               false            PCI
-  video-virtualmachine            2021.07.26                true            PCI
+	``mhwd -la``
 
 
-Warning: No USB configs found!``
+
++-------------------------------------------+----------------+-------------+-----+
+| NAME                                      | VERSION        | FREEDRIVER  | TYPE|
++===========================================+================+=============+=====+
+| network-broadcom-wl                       |   2018.10.07   |   false     | PCI |
++                                           +                +             +     +
+| network-rt3562sta                         |   2013.12.07   |   true      | PCI |
++										  +				   +			    +	  +
+| network-slmodem                           |   2013.12.07   |   true      | PCI |
++                                           +                +             +     +
+| network-r8168                             |   2016.04.20   |   true      | PCI |
++                                           +                +             +     +
+| video-vesa                                |   2017.03.12   |   true      | PCI |
++                                           +                +             +     +
+| video-sisusb                              |   2020.01.18   |   true      | PCI |
++                                           +                +             +     +
+| video-nvidia-470xx                        |   2021.11.04   |   false     | PCI |
++                                           +                +             +     +
+| video-linux                               |   2018.05.04   |   true      | PCI |
++                                           +                +             +     +
+| video-nvidia                              |   2021.11.04   |   false     | PCI |
++                                           +                +             +     +
+| video-hybrid-intel-nvidia-470xx-prime     |   2021.11.04   |   false     | PCI |
++                                           +                +             +     +
+| video-rendition                           |   2020.01.18   |   true      | PCI |
++                                           +                +             +     +
+| video-nvidia-390xx                        |   2021.11.26   |   false     | PCI |
++                                           +                +             +     +
+| video-modesetting                         |   2020.01.13   |   true      | PCI |
++                                           +                +             +     +
+| video-s3                                  |   2020.01.18   |   true      | PCI |
++                                           +                +             +     +
+| video-hybrid-amd-nvidia-prime             |   2021.11.04   |   false     | PCI |
++                                           +                +             +     +
+| video-hybrid-intel-nvidia-prime           |   2021.11.04   |   false     | PCI |
++                                           +                +             +     +
+| video-hybrid-amd-nvidia-470xx-prime       |   2021.11.04   |   false     | PCI |
++                                           +                +             +     +
+| video-voodoo                              |   2017.03.12   |   true      | PCI |
++                                           +                +             +     +
+| video-openchrome                          |   2020.01.18   |   true      | PCI |
++                                           +                +             +     +
+| video-hybrid-intel-nvidia-390xx-bumblebee |   2021.11.26   |   false     | PCI |
++                                           +                +             +     +
+| video-virtualmachine                      |   2021.07.26   |   true      | PCI |
++-------------------------------------------+----------------+-------------+-----+
+
+ ``Warning: No USB configs found!``
 
 
 Pour lister le bon driver pour notre système avec ou sans usb/pci
 
 	``mhwd -l
-	> 0000:0a:00.0 (0300:1002:1638) Display controller ATI Technologies Inc:
---------------------------------------------------------------------------------
-                  NAME               VERSION          FREEDRIVER           TYPE
---------------------------------------------------------------------------------
-           video-linux            2018.05.04                true            PCI
-     video-modesetting            2020.01.13                true            PCI
-            video-vesa            2017.03.12                true            PCI
+	> 0000:0a:00.0 (0300:1002:1638) Display controller ATI Technologies Inc:``
 
-
-``
 	
+.. figure:: ./images/gpu_installed.png
+
+
 .. Note:: Je ne peux que vous conseiller d'aller voir toutes les options de Mhwd en rajoutant la commande -h ou --help. On a même la possibilité de forcer l'installation/réinstallation d'un pilote.
 
 
@@ -979,10 +948,12 @@ Pour supprimer un pilote (généralement un propriétaire)
 
 .. Note:: Depuis mi 2022, **Nvidia** semble s'être décidé à enfin jouer la carte de l'open-source en proposant des pilotes libres sous le nom de **Nouveau** et ses pilotes propriétaires **Nvidia**.
 
-- Affiche le status actuel
+- Affiche le statuts actuel
 
-	``mhwd-gpu --status                                                                                                                                                                	:: status
-	warning: could not find '/etc/X11/xorg.conf.d/90-mhwd.conf'!``
+	``mhwd-gpu --status``                                                                                  
+	
+	                                                                             
+	``status warning: could not find '/etc/X11/xorg.conf.d/90-mhwd.conf'!``
 
 - Vérifie et répare les liens symboliques s'il le faut
 
@@ -991,13 +962,14 @@ Pour supprimer un pilote (généralement un propriétaire)
 - Affiche le fichier de configuration de Xorg
 
 	
-	``sudo mhwd-gpu --setxorg '/etc/X11/xorg.conf.d/90-mhwd.conf'                                                                                                                                       
-	warning: could not find '/etc/X11/xorg.conf.d/90-mhwd.conf'!``
+	``sudo mhwd-gpu --setxorg '/etc/X11/xorg.conf.d/90-mhwd.conf'``
+	                                                                                                                                    
+	``warning: could not find '/etc/X11/xorg.conf.d/90-mhwd.conf'!``
 
 - Affiche les modules soit nvidia soit catalyst
 
-	``sudo mhwd-gpu --setmod catalyst                                                                                  ``     
-	                                                                             
+	``sudo mhwd-gpu --setmod catalyst``                                                                      
+	
 
 MHWD-KERNEL
 ----------- 
@@ -1008,28 +980,30 @@ Sous Manjaro, c'est totalement différent. On a le choix et d'ailleurs, il est f
 
 - Listons d'abord nos Kernels installés sur notre système
 
-	``mhwd-kernel -li
-	Currently running: 5.15.60-1-MANJARO (linux515)
-The following kernels are installed in your system:
-   * linux515
-``
+ ``mhwd-kernel -li``
+ 
+ ``Currently running: 5.15.60-1-MANJARO (linux515)
+ The following kernels are installed in your system:
+ * linux515``
+
 
 - Listons les Kernels qui sont disponibles à l'installation
 
-	``mhwd-kernel -l
-	available kernels:
-   * linux419
-   * linux510
-   * linux515
-   * linux518
-   * linux519
-   * linux54
-   * linux515-rt
-   * linux518-rt
-   * linux519-rt
-``
+ ``mhwd-kernel -l``
+
+  ``available kernels:
+  * linux419
+  * linux510
+  * linux515
+  * linux518
+  * linux519
+  * linux54
+  * linux515-rt
+  * linux518-rt
+  * linux519-rt``
+
 	
-- Installons le kernel 5.19 qui est le dernier lors de la création de ces lignes Sans supprimer celui-que l'on utilise ici le 
+- Installons le kernel 5.19 qui est le dernier lors de la création de ces lignes, sans supprimer celui-que l'on utilise.
 
 
 	``sudo mhwd-kernel -i linux5.19``
