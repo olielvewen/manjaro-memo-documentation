@@ -65,6 +65,10 @@ Pacman conservera lors de cette desinstallation une sauvegarde des fichiers de c
 
 ``sudo pacman -Rsn monlogicielaenlever``
 
+Dans le cas d'un logiciel et de ses dépendances qui peuvent poser problème (cela survient généralement lors d'une maj), on peut être obligé de faire:
+
+``sudo pacman -Rdd qpdfview``
+
 
 ### Information sur un paquet
 
@@ -73,7 +77,7 @@ Pour une raison (un soucis) ou une autre (curiosité), on a besoin de savoir que
 ``pacman -Qi popplet-qt5``
 
 
-Si l'on veut connaitre la liste des fichiers appartenant à un paquet, on utilise:
+Si l'on veut connaître la liste des fichiers appartenant à un paquet, on utilise:
 
 ``pacman -Ql popplet-qt5``
 
@@ -107,4 +111,22 @@ La solution serait de mettre dans une pipe qui recherchera tout ce qui concerne 
 Une autre commande fort utile est de savoir le nom des paquets orphelins. Ce sont des paquets qui n'ont plus de mainteneurs et dont la version commence à dater. 
 
 ``pacman -Qdt``
+
+Parfois, on veut connaitre ce que fais/est un paquet (description, logiciels remplacés)
+
+``pacman -Si xorgproto``
+
+
+### Nettoyer son cache
+
+Par défaut, pacman conserve les paquets installés dans */var/cache/pacman/pkg*. Ce qui au bout d'un moment va vite devenir rempli. Il est donc necessaire de faire un peu le ménage de la manière suivante:
+
+
+``sudo pacman -Sc``
+
+
+On peut aussi vider entierement le cache sans rien conserver.
+
+``sudo pacman -Scc``
+
 
