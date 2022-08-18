@@ -1,7 +1,7 @@
 Pacman
 ======
 
-**Pacman** (non ce n'est pas une blague, les developpeurs étant de grands enfants) est le nom du gestionnaire de paquets. C'est un outil en ligne de commande très puissant puisqu'il peut tout installer ou presque., les paquets venant d'**Aur** sont à parts et eux nécessitent d'utiliser un autre gestionnaire. En ce qui me concerne, depuis que **Yaourt** est mort (eh oui c'est pas encore une blague) ce sera **Yay** le bien nommé, très proche de feux Yaourt.
+**Pacman** (non ce n'est pas une blague, les developpeurs étant de grands enfants) est le nom du gestionnaire de paquets. C'est un outil en ligne de commande très puissant puisqu'il peut tout installer ou presque., les paquets venant d'**Aur** (Arch User Repository) sont à parts et eux nécessitent d'utiliser un autre gestionnaire. En ce qui me concerne, depuis que **Yaourt** est mort (eh oui c'est pas encore une blague) ce sera **Yay** le bien nommé, très proche de feux Yaourt.
 
 
 ### Synchronisation avec les dépôts de Manjaro
@@ -61,7 +61,7 @@ Parfois voir souvent, pacman a installé d'autres paquets comme dépendance du p
 
 ``sudo pacman -Rs monlogicielaenlever``
 
-Pacman conservera lors de cette desinstallation une sauvegarde des fichiers de configurations du paquet en question au cas où l'on change d'avis ultérieurement. Si on ne veut pas que ce soit le cas, car on est sur de chez sur, dans ce cas la commande suivante sera passée.
+Pacman conservera lors de cette désinstallation une sauvegarde des fichiers de configurations du paquet en question au cas où l'on change d'avis ultérieurement. Si on ne veut pas que ce soit le cas, car on est sur de chez sur, dans ce cas la commande suivante sera passée.
 
 ``sudo pacman -Rsn monlogicielaenlever``
 
@@ -97,7 +97,7 @@ La solution serait de mettre dans une pipe qui recherchera tout ce qui concerne 
 
 ``pacman -Q | grep virtualbox``
 
-.. Note:: Virtualbox est un cas à part mais si on a des problèmes on peut faire:
+.. NOTE:: Virtualbox est un cas à part mais si on a des problèmes on peut faire:
 1. Ajouter $USER au groupe vboxuser
   * ``sudo gpasswd -a $USER vboxusers``
   
@@ -105,7 +105,7 @@ La solution serait de mettre dans une pipe qui recherchera tout ce qui concerne 
 3. vboxmanage --version`` nous donne la version de virtualbox en cours
 
 
-.. Note:: Pour connaître tous les services démarré de Virtualbox. ``systemctl status virtualbox``
+.. NOTE:: Pour connaître tous les services démarré de Virtualbox. ``systemctl status virtualbox``
 
 
 Une autre commande fort utile est de savoir le nom des paquets orphelins. Ce sont des paquets qui n'ont plus de mainteneurs et dont la version commence à dater. 
@@ -130,3 +130,13 @@ On peut aussi vider entierement le cache sans rien conserver.
 ``sudo pacman -Scc``
 
 
+### Installer un paquet hors dépôt
+
+Cette situation doit être exceptionnelle. Bien entendu, ni les dépôts de **Manjaro**, ni **AUR** ne peuvent nous aider. Elle peut survenir quand on a un soucis ou bien quand on a un besoin express de ce paquet. Dans ce cas, on crée un PKBUILD puis on crée le paquet. Et enfin, on installe ce paquet hors dépôt avec cette commande.
+
+``sudo pacman -U cheminversmonpaquet/nomdupaquetcrée-any.pkg.tar.xz``
+
+
+.. IMPORTANT:: Cette méthode à l'avantage d'installer et de dé-s’installer proprement le logiciel en question. C'est recommandé mais à faire le moins possible.
+
+.. NOTE:: Le chemin est à adapter par rapport où vous avez ouvert votre terminal.
