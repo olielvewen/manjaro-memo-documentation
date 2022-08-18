@@ -43,3 +43,26 @@ Pour cela, on va lancer une recherche avec un mot clé qui est généralement le
 ``pacman -Ss monlogicielrecherché``
 
 
+### Installer un logiciel
+
+Une fois le ou les paquet(s) trouvé(s) (sauf si on connaît déjà son nom), on peut l'installer de la manière suivante:
+
+``sudo pacman -S monlogicieltrouvé unautrelogicieltrouvé``
+
+
+### Désinstaller un logiciel
+
+La désinstallation classique se fait comme cela:
+
+``sudo pacman -R monlogicielaenlever``
+
+
+Parfois voir souvent, pacman a installé d'autres paquets comme dépendance du premier nécessaire à son bon fonctionnement. Il est alors utile de tout désinstaller en même temps et sans se souvenir/connaître le nom des ces paquets.
+
+``sudo pacman -Rs monlogicielaenlever``
+
+Pacman conservera lors de cette desinstallation une sauvegarde des fichiers de configurations du paquet en question au cas où l'on change d'avis ultérieurement. Si on ne veut pas que ce soit le cas, car on est sur de chez sur, dans ce cas la commande suivante sera passée.
+
+``sudo pacman -Rsn monlogicielaenlever``
+
+
