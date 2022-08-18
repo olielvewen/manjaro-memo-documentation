@@ -36,4 +36,10 @@ Dans ce cas, ce sera
 ``sudo pacman -Syyuu``
 
 
+### Rechercher un paquet
+
+Pour cela, on va lancer une recherche avec un mot clé qui est généralement le nom du logiciel, même une partie de celui-ci ou encore sa description.
+
+``pacman -Ss monlogicielrecherché``
+
 
