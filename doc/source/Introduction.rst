@@ -1,7 +1,7 @@
 Introduction
 ============
 
-Manjaro est une distribution rolling-release basée sur la grande Archlinux.
+**Manjaro** est une **distribution rolling-release** basée sur la grande **Archlinux**.
 Elle est à Archlinux, ce qu'est Ubuntu à Debian. Pour cela, elle s'est dotée
 d'outils spécifiques. D'abord Thus puis Calamares pour l'installation graphique
 de la distribution, d'outils en CLI (et de leurs interfaces graphiques respectives) pour gérer en tout simplicité les kernels (mhwd-kernel), les pilotes libres ou non des cartes graphiques et plus généralement
@@ -29,15 +29,12 @@ cela sera tributaire du temps que je consacrerai à la réalisation de ce mémo
 personnel car, comme vous pouvez vous en doutez je ne fai
 pas que cela.
 
-D'ailleurs, ce projet à été commencé il y a maintenant deux ans
-sur une autre plateforme de gestion de code sans avoir beaucoup avancé
-: Tuleap. Il est maintenant temps que je remédie à cette situation.
+D'ailleurs, ce projet à été commencé il y a maintenant trois ans déjà sur une autre plateforme de gestion de code sans avoir beaucoup avancé: Tuleap. Il est maintenant temps que je remédie à cette situation.
 
 
 Vous êtes au courant, je n'ai pas l'intention de faire avancer et donc ne faire
-que ça. Aussi ne vous attendez pas à avoir un vrai livre sur PyQt5 dans les
-mois à venir. Mais cela s'étoffera au fur et à mesure de ce que je ferais
-et du temps que j'y consacrerai.
+que ça. Aussi ne vous attendez pas à avoir un vrai livre sur **Manjaro** dans les mois à venir. Mais cela s'étoffera au fur et à mesure de ce que je ferais
+et du temps que j'y consacrerai. Et vu que je touche énormément au Hardware, attendez-vous à avoir des pages dessus.
 
 Si cela vous est utile et si vous aussi, vous vous trouvez dans le même cas
 que moi, vous pouvez aussi contribuer à cet mémo. Après tout, le monde du libre
