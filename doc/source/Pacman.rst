@@ -66,3 +66,45 @@ Pacman conservera lors de cette desinstallation une sauvegarde des fichiers de c
 ``sudo pacman -Rsn monlogicielaenlever``
 
 
+### Information sur un paquet
+
+Pour une raison (un soucis) ou une autre (curiosité), on a besoin de savoir quel est la version de notre paquet installé.
+
+``pacman -Qi popplet-qt5``
+
+
+Si l'on veut connaitre la liste des fichiers appartenant à un paquet, on utilise:
+
+``pacman -Ql popplet-qt5``
+
+
+Si on a un groupe de paquets installés qui commencent tous par monnompaquet-*.
+Dans ce cas on peut faire comme pour virtualbox par exemple qui vient assez nombreux car on a:
+	* linux515-virtualbox-guest-modules
+	* linux515-virtualbox-host-modules
+	* virtualbox
+	* virtualbox-ext-oracle
+	* virtualbox-ext-vnc
+	* virtualbox-guest-iso
+	* virtualbox-guest-utils
+	* virtualbox-host-dkms
+	
+La solution serait de mettre dans une pipe qui recherchera tout ce qui concerne Virtualbox.
+
+``pacman -Q | grep virtualbox``
+
+.. Note:: Virtualbox est un cas à part mais si on a des problèmes on peut faire:
+1. Ajouter $USER au groupe vboxuser
+  * ``sudo gpasswd -a $USER vboxusers``
+  
+2. ``sudo vboxreload``
+3. vboxmanage --version`` nous donne la version de virtualbox en cours
+
+
+.. Note:: Pour connaître tous les services démarré de Virtualbox. ``systemctl status virtualbox``
+
+
+Une autre commande fort utile est de savoir le nom des paquets orphelins. Ce sont des paquets qui n'ont plus de mainteneurs et dont la version commence à dater. 
+
+``pacman -Qdt``
+
