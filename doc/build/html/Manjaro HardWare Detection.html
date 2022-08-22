@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Manjaro HardWare Detection &#8212; Documentation Manjaro Memo Documentation 0.01</title>
+    <title>Manjaro HardWare Detection &#8212; Documentation Manjaro Memo Documentation 0.03</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/classic.css" />
     
@@ -34,7 +34,7 @@
         <li class="right" >
           <a href="Mise%20%C3%A0%20jour%20syst%C3%A8me.html" title="Mise à Jour du Système"
              accesskey="P">précédent</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Documentation Manjaro Memo Documentation 0.01</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Documentation Manjaro Memo Documentation 0.03</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Manjaro HardWare Detection</a></li> 
       </ul>
     </div>  
@@ -57,50 +57,55 @@
 <ul class="simple">
 <li><p><strong>mhwd-kernel</strong> : est la commande pour gérer son ou plutôt ses kernels. C’est une des grandes possibilités que permet <strong>Manjaro</strong> c’est d’avoir des Kernels aux pluriels. Des LTS en général et parfois aussi, des kernels intermédiaires afin de bénéficier soit de nouvelles fonctionnalités non incluses dans les LTS soit des corrections de bogues ou les deux.</p></li>
 </ul>
-<p># MHWD
-Mhwd est le nouvel outil que se dote Manjaro pour gérer les pilotes usb et pci dont installation et /ou la suppression de la carte graphique toujours complexe pour le débutant et le chevronné aussi.</p>
+<section id="mhwd">
+<h2>MHWD<a class="headerlink" href="#mhwd" title="Lien permanent vers cette rubrique">¶</a></h2>
+<p>Mhwd est le nouvel outil que se dote Manjaro pour gérer les pilotes usb et pci dont installation et /ou la suppression de la carte graphique toujours complexe pour le débutant et le chevronné aussi.</p>
 <p>La commande se passe soit en mode utilisateur normal soit en root à laquelle ont spécifie s’il s’agit d’un périphérique usb ou pci, puis le choix du type de pilotes cad s’il est libre ou propriétaire auquel on attribut un code à 4 chiffre, ce code correspondant à un type spécifique de hardware. Le seul code connu à ce jour (vu qu’il s’agit d’un outil en développement comme je l’ai déjà sus-cité) est celui pour l’installation des cartes graphiques qui est le 0300. Ce qui nous donne donc pour les cas suivants :</p>
-<p>Affichage de la liste du hardware installé avec vue détaillée (ou pas), seulement les périphériques usb ou pci (ou pas)</p>
+<ul>
+<li><p>Affichage de la liste du hardware installé avec vue détaillée (ou pas), seulement les périphériques usb ou pci (ou pas)</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">mhwd</span> <span class="pre">-lh(--listhardware)</span> <span class="pre">-d(--detail)</span> <span class="pre">--pci/--usb</span></code></p>
+</div></blockquote>
+</li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>On peut soit utiliser les diminutifs soit l’appellation exacte comme souvent dans un programme en CLI.</p>
-<p>mhwd -lh(–listhardware) -d(–detail) –pci/–usb</p>
 </div>
 <p>Ce qui donne pour du pci détaillé par exemple sur une carte mère B550 avec un Ryzen 5700G</p>
 <blockquote>
-<div><blockquote>
-<div><p>mhwd -lh -d –pci</p>
-<p>06: PCI 08.0: 0600 Host bridge</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">mhwd</span> <span class="pre">-lh</span> <span class="pre">-d</span> <span class="pre">--pci</span></code></p>
 </div></blockquote>
-<p>SysFS ID: /devices/pci0000:00/0000:00:08.0
-SysFS BusID: 0000:00:08.0
-Hardware Class: bridge
-Model: « AMD Renoir PCIe Dummy Host Bridge »
-Vendor: pci 0x1022 « AMD »
-Device: pci 0x1632 « Renoir PCIe Dummy Host Bridge »
-Module Alias: « pci:v00001022d00001632sv00000000sd00000000bc06sc00i00 »</p>
-</div></blockquote>
+<div class="line-block">
+<div class="line">06: PCI 08.0: 0600 Host bridge
+    SysFS ID: /devices/pci0000:00/0000:00:08.0|     SysFS BusID: 0000:00:08.0
+    Hardware Class: bridge
+    Model: « AMD Renoir PCIe Dummy Host Bridge »
+    Vendor: pci 0x1022 « AMD »
+    Device: pci 0x1632 « Renoir PCIe Dummy Host Bridge »
+Module Alias: « pci:v00001022d00001632sv00000000sd00000000bc06sc00i00 »…</div>
+</div>
+<div class="line-block">
+<div class="line">07: PCI a00.6: 0403 Audio device
+<a href="#id1"><span class="problematic" id="id2">|</span></a>SysFS ID: /devices/pci0000:00/0000:00:08.1/0000:0a:00.6
+<a href="#id3"><span class="problematic" id="id4">|</span></a>SysFS BusID: 0000:0a:00.6
+<a href="#id5"><span class="problematic" id="id6">|</span></a>Hardware Class: sound
+<a href="#id7"><span class="problematic" id="id8">|</span></a>Model: « AMD Family 17h (Models 10h-1fh) HD Audio Controller »
+<a href="#id9"><span class="problematic" id="id10">|</span></a>Vendor: pci 0x1022 « AMD »
+<a href="#id11"><span class="problematic" id="id12">|</span></a>Device: pci 0x15e3 « Family 17h (Models 10h-1fh) HD Audio Controller »
+<a href="#id13"><span class="problematic" id="id14">|</span></a>SubVendor: pci 0x1043 « ASUSTeK Computer Inc. »
+<a href="#id15"><span class="problematic" id="id16">|</span></a>SubDevice: pci 0x87c5
+<a href="#id17"><span class="problematic" id="id18">|</span></a>Driver: « snd_hda_intel »
+<a href="#id19"><span class="problematic" id="id20">|</span></a>Driver Modules: « snd_hda_intel »
+<a href="#id21"><span class="problematic" id="id22">|</span></a>Memory Range: 0xfca80000-0xfca87fff (rw,non-prefetchable)
+<a href="#id23"><span class="problematic" id="id24">|</span></a>IRQ: 102 (1486 events)
+<a href="#id25"><span class="problematic" id="id26">|</span></a>Module Alias: « pci:v00001022d000015E3sv00001043sd000087C5bc04sc03i00 »
+<a href="#id27"><span class="problematic" id="id28">|</span></a>Driver Info #0:
+  <a href="#id29"><span class="problematic" id="id30">|</span></a>Driver Status: snd_hda_intel is active
+  <a href="#id31"><span class="problematic" id="id32">|</span></a>Driver Activation Cmd: « modprobe snd_hda_intel »
+<a href="#id33"><span class="problematic" id="id34">|</span></a>Attached to: #26 (PCI bridge)</div>
+</div>
 <dl>
-<dt>07: PCI a00.6: 0403 Audio device</dt><dd><p>SysFS ID: /devices/pci0000:00/0000:00:08.1/0000:0a:00.6
-SysFS BusID: 0000:0a:00.6
-Hardware Class: sound
-Model: « AMD Family 17h (Models 10h-1fh) HD Audio Controller »
-Vendor: pci 0x1022 « AMD »
-Device: pci 0x15e3 « Family 17h (Models 10h-1fh) HD Audio Controller »
-SubVendor: pci 0x1043 « ASUSTeK Computer Inc. »
-SubDevice: pci 0x87c5
-Driver: « snd_hda_intel »
-Driver Modules: « snd_hda_intel »
-Memory Range: 0xfca80000-0xfca87fff (rw,non-prefetchable)
-IRQ: 102 (1486 events)
-Module Alias: « pci:v00001022d000015E3sv00001043sd000087C5bc04sc03i00 »
-Driver Info #0:</p>
-<blockquote>
-<div><p>Driver Status: snd_hda_intel is active
-Driver Activation Cmd: « modprobe snd_hda_intel »</p>
-</div></blockquote>
-<p>Attached to: #26 (PCI bridge)</p>
-</dd>
 <dt>08: PCI 18.3: 0600 Host bridge</dt><dd><p>SysFS ID: /devices/pci0000:00/0000:00:18.3
 SysFS BusID: 0000:00:18.3
 Hardware Class: bridge
@@ -330,8 +335,15 @@ Device: pci 0x1631 « Renoir IOMMU »
 SubVendor: pci 0x1043 « ASUSTeK Computer Inc. »
 SubDevice: pci 0x8809
 IRQ: 2147483648 (no events)
-Module Alias: « pci:v00001022d00001631sv00001043sd00008809bc08sc06i00 »</p>
+Module Alias: « pci:v00Currently running: 5.15.60-1-MANJARO (linux515)</p>
 </dd>
+<dt>The following kernels are installed in your system:</dt><dd><ul class="simple">
+<li><p>linux515</p></li>
+</ul>
+</dd>
+</dl>
+<p>001022d00001631sv00001043sd00008809bc08sc06i00 »</p>
+<dl>
 <dt>23: PCI 18.6: 0600 Host bridge</dt><dd><p>SysFS ID: /devices/pci0000:00/0000:00:18.6
 SysFS BusID: 0000:00:18.6
 Hardware Class: bridge
@@ -585,10 +597,11 @@ Device: pci 0x166f
 Module Alias: « pci:v00001022d0000166Fsv00000000sd00000000bc06sc00i00 »</p>
 </dd>
 </dl>
+<p><a href="#id35"><span class="problematic" id="id36">``</span></a></p>
 <p>Voici ce que l’on obtient pour l’usb toujours sur la même configuration que la commande précédante.</p>
 <blockquote>
 <div><blockquote>
-<div><p>mhwd -lh -d –usb
+<div><p><a href="#id37"><span class="problematic" id="id38">``</span></a>mhwd -lh -d –usb
 03: USB 00.0: 10503 USB Mouse</p>
 </div></blockquote>
 <p>SysFS ID: /devices/pci0000:00/0000:00:02.1/0000:01:00.0/usb1/1-9/1-9:1.0
@@ -842,222 +855,75 @@ Module Alias: « usb:v1D6Bp0003d0515dc09dsc00dp03ic09isc00ip00in00 »</p>
 </dl>
 <p>Et une dernière la plus simple possible !</p>
 <blockquote>
-<div><p>mhwd -lh
-&gt; PCI devices:</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">mhwd</span> <span class="pre">-lh</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">PCI</span> <span class="pre">devices:</span></code></p>
 </div></blockquote>
-<section id="type-bus-class-vendor-device-configs">
-<h2>TYPE            BUS   CLASS  VENDOR  DEVICE   CONFIGS<a class="headerlink" href="#type-bus-class-vendor-device-configs" title="Lien permanent vers cette rubrique">¶</a></h2>
-<blockquote>
-<div><blockquote>
-<div><blockquote>
-<div><blockquote>
-<div><p>Bridge   0000:00:08.0    0600    1022    1632         0</p>
-</div></blockquote>
-<dl class="simple">
-<dt>Multimedia controller   0000:0a:00.6    0403    1022    15e3         0</dt><dd><p>Bridge   0000:00:18.3    0600    1022    166d         0</p>
-</dd>
-</dl>
-</div></blockquote>
-<dl>
-<dt>Mass storage controller   0000:09:00.0    0108    144d    a808         0</dt><dd><dl>
-<dt>Serial bus controller   0000:0a:00.4    0c03    1022    1639         0</dt><dd><blockquote>
-<div><p>Bridge   0000:00:18.1    0600    1022    166b         0
-Bridge   0000:02:00.0    0604    1022    43ea         0
-Bridge   0000:00:01.0    0600    1022    1632         0</p>
-</div></blockquote>
-<dl class="simple">
-<dt>Network controller   0000:08:00.0    0200    8086    15f3         0</dt><dd><p>Bridge   0000:01:00.2    0604    1022    43e9         0</p>
-</dd>
-</dl>
-</dd>
-<dt>Encryption controller   0000:0a:00.2    1080    1022    15df         0</dt><dd><p>Bridge   0000:02:03.0    0604    1022    43ea         0
-Bridge   0000:00:14.3    0601    1022    790e         0</p>
-</dd>
-<dt>Serial bus controller   0000:01:00.0    0c03    1022    43ee         0</dt><dd><blockquote>
-<div><p>Bridge   0000:00:02.1    0604    1022    1634         0</p>
-</div></blockquote>
-<p>Display controller   0000:0a:00.0    0300    1002    1638         3</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</div></blockquote>
-<dl>
-<dt>Generic system peripheral   0000:00:00.2    0806    1022    1631         0</dt><dd><blockquote>
-<div><blockquote>
-<div><p>Bridge   0000:00:18.6    0600    1022    1670         0
-Bridge   0000:02:09.0    0604    1022    43ea         0
-Bridge   0000:00:00.0    0600    1022    1630         0
-Bridge   0000:00:08.1    0604    1022    1635         0
-Bridge   0000:00:18.4    0600    1022    166e         0
-Bridge   0000:02:02.0    0604    1022    43ea         0
-Bridge   0000:00:18.2    0600    1022    166c         0</p>
-</div></blockquote>
-<dl class="simple">
-<dt>Serial bus controller   0000:0a:00.3    0c03    1022    1639         0</dt><dd><p>Bridge   0000:00:18.0    0600    1022    166a         0
-Bridge   0000:02:08.0    0604    1022    43ea         0</p>
-</dd>
-</dl>
-</div></blockquote>
-<dl>
-<dt>Mass storage controller   0000:01:00.1    0106    1022    43eb         0</dt><dd><blockquote>
-<div><p>Bridge   0000:00:02.2    0604    1022    1634         0</p>
-</div></blockquote>
-<dl class="simple">
-<dt>Multimedia controller   0000:0a:00.1    0403    1002    1637         0</dt><dd><dl class="simple">
-<dt>Network controller   0000:04:00.0    0200    8086    2723         0</dt><dd><p>Bridge   0000:02:01.0    0604    1022    43ea         0
-Bridge   0000:00:02.0    0600    1022    1632         0
-Bridge   0000:00:18.7    0600    1022    1671         0</p>
-</dd>
-</dl>
-</dd>
-<dt>Serial bus controller   0000:00:14.0    0c05    1022    790b         0</dt><dd><p>Bridge   0000:00:18.5    0600    1022    166f         0</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd>
-</dl>
-</div></blockquote>
-<section id="usb-devices">
-<h3>&gt; USB devices:<a class="headerlink" href="#usb-devices" title="Lien permanent vers cette rubrique">¶</a></h3>
-<blockquote>
-<div><p>TYPE            BUS   CLASS  VENDOR  DEVICE   CONFIGS</p>
-</div></blockquote>
-<blockquote>
-<div><dl>
-<dt>Unclassified device        1-6:1.2    0000    0b05    1939         0</dt><dd><blockquote>
-<div><p>Hub        3-0:1.0   10a00    1d6b    0002         0</p>
-</div></blockquote>
-<p>Bluetooth Device      1-7.2:1.0   11500    8087    0029         0</p>
-</dd>
-</dl>
-<p>Unclassified device        3-1:1.2    0000    046d    c547         0
-Unclassified device        1-9:1.1    0000    1532    0083         0</p>
-<blockquote>
-<div><blockquote>
-<div><blockquote>
-<div><p>Hub        1-7:1.0   10a00    05e3    0608         0</p>
-</div></blockquote>
-<dl class="simple">
-<dt>Mouse        3-1:1.0   10503    046d    c547         0</dt><dd><p>Hub        4-0:1.0   10a00    1d6b    0003         0
-Hub        1-0:1.0   10a00    1d6b    0002         0
-Hub        5-0:1.0   10a00    1d6b    0002         0</p>
-</dd>
-</dl>
-</div></blockquote>
-<dl class="simple">
-<dt>Keyboard        3-1:1.1   10800    046d    c547         0</dt><dd><p>Hub        2-0:1.0   10a00    1d6b    0003         0</p>
-</dd>
-</dl>
-</div></blockquote>
-</div></blockquote>
+<figure class="align-default">
+<img alt="_images/pci_mhwd.png" src="_images/pci_mhwd.png" />
+</figure>
+<figure class="align-default">
+<img alt="_images/usb_devices.png" src="_images/usb_devices.png" />
+</figure>
 <p>On identifie et liste tous les drivers installés en utilisant le même principe détaillé (ou pas), usb ou pci (ou pas) que la  commande précédante.</p>
 <p>On veut une liste détaillée.</p>
 <blockquote>
 <div><blockquote>
-<div><p>mhwd -li -d
-NAME:        video-linux</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">mhwd</span> <span class="pre">-li</span> <span class="pre">-d</span></code></p>
 </div></blockquote>
-<p>ATTACHED:    PCI
-VERSION:     2018.05.04
-INFO:        Standard open source drivers.
-PRIORITY:    2
-FREEDRIVER:  true
-DEPENDS:     -
-CONFLICTS:   -
-CLASSIDS:    0300 0380 0302
-VENDORIDS:   1002 8086 10de</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Name:
+ATTACHED:
+VERSION:
+INFO:
+PRIORITY:
+FREEDRIVER:
+DEPENDS:
+CONFLICTS:
+CLASSIDS:
+VENDORIDS:</p></td>
+<td><p>video-linux
+PCI
+2018.05.04
+Standard open source drivers.
+2
+true
+-
+-
+0300 0380 0302
+1002 8086 10de</p></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">Warning:</span> <span class="pre">no</span> <span class="pre">installed</span> <span class="pre">configs</span> <span class="pre">for</span> <span class="pre">USB</span> <span class="pre">devices</span> <span class="pre">found!</span></code></p>
 </div></blockquote>
-<p>Warning: no installed configs for USB devices found!</p>
+</div></blockquote>
 <p>On peut aussi lister les drivers disponibles globalement ou en usb ou en pci seulement.</p>
 <blockquote>
-<div><p>mhwd -la
-&gt; All PCI configs:</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">mhwd</span> <span class="pre">-la</span></code></p>
 </div></blockquote>
-</section>
-</section>
-<section id="name-version-freedriver-type">
-<h2>NAME               VERSION          FREEDRIVER           TYPE<a class="headerlink" href="#name-version-freedriver-type" title="Lien permanent vers cette rubrique">¶</a></h2>
 <blockquote>
-<div><dl>
-<dt>network-broadcom-wl            2018.10.07               false            PCI</dt><dd><blockquote>
-<div><dl>
-<dt>network-rt3562sta            2013.12.07                true            PCI</dt><dd><dl>
-<dt>network-slmodem            2013.12.07                true            PCI</dt><dd><dl>
-<dt>network-r8168            2016.04.20                true            PCI</dt><dd><blockquote>
-<div><p>video-vesa            2017.03.12                true            PCI</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">Warning:</span> <span class="pre">No</span> <span class="pre">USB</span> <span class="pre">configs</span> <span class="pre">found!</span></code></p>
 </div></blockquote>
-<p>video-sisusb            2020.01.18                true            PCI</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd>
-</dl>
-</div></blockquote>
-<dl>
-<dt>video-nvidia-470xx            2021.11.04               false            PCI</dt><dd><blockquote>
-<div><p>video-linux            2018.05.04                true            PCI</p>
-</div></blockquote>
-<p>video-nvidia            2021.11.04               false            PCI</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</div></blockquote>
-<dl>
-<dt>video-hybrid-intel-nvidia-470xx-prime            2021.11.04               false            PCI</dt><dd><blockquote>
-<div><p>video-rendition            2020.01.18                true            PCI</p>
-</div></blockquote>
-<dl class="simple">
-<dt>video-nvidia-390xx            2021.11.26               false            PCI</dt><dd><dl class="simple">
-<dt>video-modesetting            2020.01.13                true            PCI</dt><dd><p>video-s3            2020.01.18                true            PCI</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd>
-</dl>
-<p>video-hybrid-amd-nvidia-prime            2021.11.04               false            PCI
-video-hybrid-intel-nvidia-prime            2021.11.04               false            PCI
-video-hybrid-amd-nvidia-470xx-prime            2021.11.04               false            PCI</p>
-<blockquote>
-<div><blockquote>
-<div><p>video-voodoo            2017.03.12                true            PCI</p>
-</div></blockquote>
-<p>video-openchrome            2020.01.18                true            PCI</p>
-</div></blockquote>
-<dl class="simple">
-<dt>video-hybrid-intel-nvidia-390xx-bumblebee            2021.11.26               false            PCI</dt><dd><p>video-virtualmachine            2021.07.26                true            PCI</p>
-</dd>
-</dl>
-<p>Warning: No USB configs found!</p>
 <p>Pour lister le bon driver pour notre système avec ou sans usb/pci</p>
 <blockquote>
-<div><p>mhwd -l
-&gt; 0000:0a:00.0 (0300:1002:1638) Display controller ATI Technologies Inc:</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">mhwd</span> <span class="pre">-l</span>
+<span class="pre">&gt;</span> <span class="pre">0000:0a:00.0</span> <span class="pre">(0300:1002:1638)</span> <span class="pre">Display</span> <span class="pre">controller</span> <span class="pre">ATI</span> <span class="pre">Technologies</span> <span class="pre">Inc:</span></code></p>
 </div></blockquote>
-</section>
-<section id="id1">
-<h2>NAME               VERSION          FREEDRIVER           TYPE<a class="headerlink" href="#id1" title="Lien permanent vers cette rubrique">¶</a></h2>
-<blockquote>
-<div><blockquote>
-<div><p>video-linux            2018.05.04                true            PCI</p>
-</div></blockquote>
-<dl class="simple">
-<dt>video-modesetting            2020.01.13                true            PCI</dt><dd><p>video-vesa            2017.03.12                true            PCI</p>
-</dd>
-</dl>
-</div></blockquote>
+<figure class="align-default">
+<img alt="_images/gpu_installed.png" src="_images/gpu_installed.png" />
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Je ne peux que vous conseiller d’aller voir toutes les options de Mhwd en rajoutant la commande -h ou –help. On a même la possibilité de forcer l’installation/réinstallation d’un pilote.</p>
 </div>
-<p>## GPU</p>
+</section>
+<section id="gpu">
+<h2>GPU<a class="headerlink" href="#gpu" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Pour identifier les pilotes graphique disponibles:</p>
 <blockquote>
-<div><p>mhwd -l (vue détaillée optionnelle avec l’option -i) (connexion –pci ou –usb optionnelle aussi)</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">mhwd</span> <span class="pre">-l</span> <span class="pre">(vue</span> <span class="pre">détaillée</span> <span class="pre">optionnelle</span> <span class="pre">avec</span> <span class="pre">l'option</span> <span class="pre">-i)</span> <span class="pre">(connexion</span> <span class="pre">--pci</span> <span class="pre">ou</span> <span class="pre">--usb</span> <span class="pre">optionnelle</span> <span class="pre">aussi)</span></code></p>
 </div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1066,16 +932,16 @@ video-hybrid-amd-nvidia-470xx-prime            2021.11.04               false   
 <p>Ce qui nous donnes:</p>
 <p>Pour détecter et installer un pilote graphique d’une carte graphique pci avec le pilote open-source :</p>
 <blockquote>
-<div><p>sudo mhwd -a pci free 0300</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">mhwd</span> <span class="pre">-a</span> <span class="pre">pci</span> <span class="pre">free</span> <span class="pre">0300</span></code></p>
 </div></blockquote>
 <p>Pour faire la même chose mais en installant le pilote propriétaire (ex amd ou nvidia ou intel):</p>
 <blockquote>
-<div><p>sudo mhwd -a pci nonfree 0300</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">mhwd</span> <span class="pre">-a</span> <span class="pre">pci</span> <span class="pre">nonfree</span> <span class="pre">0300</span></code></p>
 </div></blockquote>
 <dl class="simple">
-<dt>Pour forcer la réinstallation d’un pilote</dt><dd><p>sudo mhwd -f -i pci non_du_pilote (ex: video-nvidia)</p>
+<dt>Pour forcer la réinstallation d’un pilote</dt><dd><p><a href="#id39"><span class="problematic" id="id40">``</span></a>sudo mhwd -f -i pci non_du_pilote (ex: video-nvidia) ``</p>
 </dd>
-<dt>Pour supprimer un pilote (généralement un propriétaire)</dt><dd><p>sudo mhwd -r pci nom_du_pilote (ex: video-nvidia)</p>
+<dt>Pour supprimer un pilote (généralement un propriétaire)</dt><dd><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">mhwd</span> <span class="pre">-r</span> <span class="pre">pci</span> <span class="pre">nom_du_pilote</span> <span class="pre">(ex:</span> <span class="pre">video-nvidia)</span></code></p>
 </dd>
 </dl>
 <div class="admonition note">
@@ -1086,76 +952,107 @@ video-hybrid-amd-nvidia-470xx-prime            2021.11.04               false   
 <p class="admonition-title">Note</p>
 <p>Pour <strong>Amd</strong>, les pilotes graphiques depuis 2015/2016 sont nommés <strong>amdgpu</strong> pour les pilotes libres et <strong>amdgpu-pro</strong> pour les pilotes propriétaires.</p>
 </div>
-<p>..Note:: Aucune idée pour l’instant en ce qui concerne les pilotes graphiques <strong>Intel</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Aucune idée pour l’instant en ce qui concerne les pilotes graphiques <strong>Intel</strong>.</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Depuis mi 2022, <strong>Nvidia</strong> semble s’être décidé à enfin jouer la carte de l’open-source en proposant des pilotes libres sous le nom de <strong>Nouveau</strong> et ses pilotes propriétaires <strong>Nvidia</strong>.</p>
 </div>
 <ul>
-<li><p>Affiche le status actuel</p>
+<li><p>Affiche le statuts actuel</p>
 <blockquote>
-<div><p>mhwd-gpu –status                                                                                                                                                                       :: status
-warning: could not find “/etc/X11/xorg.conf.d/90-mhwd.conf”!</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">mhwd-gpu</span> <span class="pre">--status</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">status</span> <span class="pre">warning:</span> <span class="pre">could</span> <span class="pre">not</span> <span class="pre">find</span> <span class="pre">'/etc/X11/xorg.conf.d/90-mhwd.conf'!</span></code></p>
 </div></blockquote>
 </li>
 <li><p>Vérifie et répare les liens symboliques s’il le faut</p>
 <blockquote>
-<div><p>mhwd-gpu –check</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">mhwd-gpu</span> <span class="pre">--check</span></code></p>
 </div></blockquote>
 </li>
 <li><p>Affiche le fichier de configuration de Xorg</p>
 <blockquote>
-<div><p>sudo mhwd-gpu –setxorg “/etc/X11/xorg.conf.d/90-mhwd.conf”
-warning: could not find “/etc/X11/xorg.conf.d/90-mhwd.conf”!</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">mhwd-gpu</span> <span class="pre">--setxorg</span> <span class="pre">'/etc/X11/xorg.conf.d/90-mhwd.conf'</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">warning:</span> <span class="pre">could</span> <span class="pre">not</span> <span class="pre">find</span> <span class="pre">'/etc/X11/xorg.conf.d/90-mhwd.conf'!</span></code></p>
 </div></blockquote>
 </li>
 <li><p>Affiche les modules soit nvidia soit catalyst</p>
 <blockquote>
-<div><dl class="simple">
-<dt>sudo mhwd-gpu –setmod catalyst</dt><dd><p></p>
-</dd>
-</dl>
+<div><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">mhwd-gpu</span> <span class="pre">--setmod</span> <span class="pre">catalyst</span></code></p>
 </div></blockquote>
 </li>
 </ul>
-<p># MHWD-KERNEL</p>
+</section>
+<section id="mhwd-kernel">
+<h2>MHWD-KERNEL<a class="headerlink" href="#mhwd-kernel" title="Lien permanent vers cette rubrique">¶</a></h2>
 <blockquote>
 <div><p>Tout ce qui touche aux Kernels est un peu tabou sur la majorité des distributions Linux. D’ailleurs, on n’a souvent qu’un Kernel d’installé, celui-qui vient avec celle-ci.</p>
 </div></blockquote>
 <p>Sous Manjaro, c’est totalement différent. On a le choix et d’ailleurs, il est fortement conseillé d’avoir deux kernels stables en plus du kernel que l’on utilise. Et C’est d’une facilité déconcertant. Le mieux est de voir avec quelques exemples la puissance et la simplicité de cet outil.</p>
-<p>Listons d’abord nos Kernels installés sur notre système</p>
+<ul class="simple">
+<li><p>Listons d’abord nos Kernels installés sur notre système</p></li>
+</ul>
 <blockquote>
-<div><p>mhwd-kernel -li</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">mhwd-kernel</span> <span class="pre">-li</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Currently</span> <span class="pre">running:</span> <span class="pre">5.15.60-1-MANJARO</span> <span class="pre">(linux515)</span>
+<span class="pre">The</span> <span class="pre">following</span> <span class="pre">kernels</span> <span class="pre">are</span> <span class="pre">installed</span> <span class="pre">in</span> <span class="pre">your</span> <span class="pre">system:</span>
+<span class="pre">*</span> <span class="pre">linux515</span></code></p>
 </div></blockquote>
-<p>Listons les Kernels qui sont disponibles à l’installation</p>
+<ul class="simple">
+<li><p>Listons les Kernels qui sont disponibles à l’installation</p></li>
+</ul>
 <blockquote>
-<div><p>mhwd-kernel</p>
-</div></blockquote>
-<p>Installons le kernel 5.19 qui est le dernier lors de la création de ces lignes Sans supprimer celui-que l’on utilise ici le</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">mhwd-kernel</span> <span class="pre">-l</span></code></p>
 <blockquote>
-<div><p>sudo mhwd-kernel -i linux5.19</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">available</span> <span class="pre">kernels:</span>
+<span class="pre">*</span> <span class="pre">linux419</span>
+<span class="pre">*</span> <span class="pre">linux510</span>
+<span class="pre">*</span> <span class="pre">linux515</span>
+<span class="pre">*</span> <span class="pre">linux518</span>
+<span class="pre">*</span> <span class="pre">linux519</span>
+<span class="pre">*</span> <span class="pre">linux54</span>
+<span class="pre">*</span> <span class="pre">linux515-rt</span>
+<span class="pre">*</span> <span class="pre">linux518-rt</span>
+<span class="pre">*</span> <span class="pre">linux519-rt</span></code></p>
 </div></blockquote>
-<p>On peut faire tout autrement à la fois en installant le 5.19 et celui que l’on utilise avec la commande rmc</p>
+</div></blockquote>
+<ul>
+<li><p>Installons le kernel 5.19 qui est le dernier lors de la création de ces lignes, sans supprimer celui-que l’on utilise.</p>
 <blockquote>
-<div><p>sudo mhwd-kernel -i linux5.19 rmc</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">mhwd-kernel</span> <span class="pre">-i</span> <span class="pre">linux5.19</span></code></p>
 </div></blockquote>
-<p>Desinstallons un kernel autre que celui que l’on utilise</p>
+</li>
+<li><p>On peut faire tout autrement à la fois en installant le 5.19 et celui que l’on utilise avec la commande rmc</p>
 <blockquote>
-<div><p>sudo mhwd-kernel -r linux4.19</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">mhwd-kernel</span> <span class="pre">-i</span> <span class="pre">linux5.19</span> <span class="pre">rmc</span></code></p>
 </div></blockquote>
-<p>Pour supprimer les headers du Kernel, on est obligé de passer par pacman</p>
+</li>
+<li><p>Désinstallons un kernel autre que celui que l’on utilise</p>
 <blockquote>
-<div><p>sudo pacman -R linux4.19-headers</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">mhwd-kernel</span> <span class="pre">-r</span> <span class="pre">linux4.19</span></code></p>
 </div></blockquote>
-<p>Pour supprimer les modules extras, on est obligé de passer par pacman</p>
+</li>
+<li><p>Pour supprimer les headers du Kernel, on est obligé de passer par pacman</p>
 <blockquote>
-<div><p>sudo pacman -R linux4.19-extramodules</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pacman</span> <span class="pre">-R</span> <span class="pre">linux4.19-headers</span></code></p>
 </div></blockquote>
-<p>Pour tout supprimer à la fois cad le kernel, les headers et les extras du module, on se sert de pacman</p>
+</li>
+<li><p>Pour supprimer les modules extras, on est obligé de passer par pacman</p>
 <blockquote>
-<div><p>sudo pacman -R linux4.19 linux4.19-headers linux4.19-extramodules</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pacman</span> <span class="pre">-R</span> <span class="pre">linux4.19-extramodules</span></code></p>
 </div></blockquote>
-<p># Interface Graphique</p>
+</li>
+<li><p>Pour tout supprimer à la fois cad le kernel, les headers et les extras du module, on se sert de pacman</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pacman</span> <span class="pre">-R</span> <span class="pre">linux4.19</span> <span class="pre">linux4.19-headers</span> <span class="pre">linux4.19-extramodules</span></code></p>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="interface-graphique">
+<h2>Interface Graphique<a class="headerlink" href="#interface-graphique" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Pour cela, il suffit d’aller dans Configuration System. Toutefois, le résultat graphique peut varier suivant l’environnement que vous utilisez.
 Dans KDE il est intégré à Configuration System tandis que sous Cinnamon il est disponible séparément.</p>
 <p>Pour KDE, mhwd (carte graphique), mhwd hardware (avec tout le hardware) puis mhwd-kernel (les kernels)</p>
@@ -1178,17 +1075,28 @@ Dans KDE il est intégré à Configuration System tandis que sous Cinnamon il es
 <figure class="align-default">
 <img alt="images/mhwd_kernel_cinnamon.png" src="images/mhwd_kernel_cinnamon.png" />
 </figure>
-<p># Mais pas que:</p>
+</section>
+<section id="mais-pas-que">
+<h2>Mais pas que<a class="headerlink" href="#mais-pas-que" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>En Cli notre système peut nous fournir pas mal d’informations sur  le GPU.
 En voici quelques unes:</p>
-<dl class="simple">
-<dt>Identifier son GPU</dt><dd><p>sudo lspci | grep -i vga</p>
-</dd>
-<dt>Pour un Ryzen 7 5700G avec IGP RDNA1 intégré</dt><dd><p>0a:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Cezanne (rev c8)</p>
-</dd>
-<dt>Pour un portable avec un Ryzen 7 5800 H avec IGP RDNA1 intégré</dt><dd><p>0a:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Cezanne (rev c5)</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Identifier son GPU</dt><dd><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">lspci</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-i</span> <span class="pre">vga</span></code></p>
 </dd>
 </dl>
+</li>
+<li><dl class="simple">
+<dt>Pour un Ryzen 7 5700G avec IGP RDNA1 intégré</dt><dd><p><code class="docutils literal notranslate"><span class="pre">0a:00.0</span> <span class="pre">VGA</span> <span class="pre">compatible</span> <span class="pre">controller:</span> <span class="pre">Advanced</span> <span class="pre">Micro</span> <span class="pre">Devices,</span> <span class="pre">Inc.</span> <span class="pre">[AMD/ATI]</span> <span class="pre">Cezanne</span> <span class="pre">(rev</span> <span class="pre">c8)</span></code></p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Pour un portable avec un Ryzen 7 5800 H avec IGP RDNA1 intégré</dt><dd><p><code class="docutils literal notranslate"><span class="pre">0a:00.0</span> <span class="pre">VGA</span> <span class="pre">compatible</span> <span class="pre">controller:</span> <span class="pre">Advanced</span> <span class="pre">Micro</span> <span class="pre">Devices,</span> <span class="pre">Inc.</span> <span class="pre">[AMD/ATI]</span> <span class="pre">Cezanne</span> <span class="pre">(rev</span> <span class="pre">c5)</span></code></p>
+</dd>
+</dl>
+</li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>On se rend compte que quelque soit le résultat et sous n’importe quelle forme, il provient majoritairement de la commande <strong>dmesg</strong>.</p>
@@ -1207,12 +1115,11 @@ En voici quelques unes:</p>
     <h3><a href="index.html">Table des matières</a></h3>
     <ul>
 <li><a class="reference internal" href="#">Manjaro HardWare Detection</a><ul>
-<li><a class="reference internal" href="#type-bus-class-vendor-device-configs">TYPE            BUS   CLASS  VENDOR  DEVICE   CONFIGS</a><ul>
-<li><a class="reference internal" href="#usb-devices">&gt; USB devices:</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#name-version-freedriver-type">NAME               VERSION          FREEDRIVER           TYPE</a></li>
-<li><a class="reference internal" href="#id1">NAME               VERSION          FREEDRIVER           TYPE</a></li>
+<li><a class="reference internal" href="#mhwd">MHWD</a></li>
+<li><a class="reference internal" href="#gpu">GPU</a></li>
+<li><a class="reference internal" href="#mhwd-kernel">MHWD-KERNEL</a></li>
+<li><a class="reference internal" href="#interface-graphique">Interface Graphique</a></li>
+<li><a class="reference internal" href="#mais-pas-que">Mais pas que</a></li>
 </ul>
 </li>
 </ul>
@@ -1261,12 +1168,12 @@ En voici quelques unes:</p>
         <li class="right" >
           <a href="Mise%20%C3%A0%20jour%20syst%C3%A8me.html" title="Mise à Jour du Système"
              >précédent</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Documentation Manjaro Memo Documentation 0.01</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Documentation Manjaro Memo Documentation 0.03</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Manjaro HardWare Detection</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2019, Olivier Girard.
+        &#169; Copyright 2019 - 2022, Olivier Girard.
       Créé en utilisant <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
     </div>
   </body>

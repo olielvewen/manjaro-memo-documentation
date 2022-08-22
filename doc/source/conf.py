@@ -22,7 +22,7 @@ copyright = '2019 - 2022, Olivier Girard'
 author = 'Olivier Girard'
 
 # The full version, including alpha/beta/rc tags
-release = '0.02'
+release = '0.03'
 
 
 # -- General configuration ---------------------------------------------------
