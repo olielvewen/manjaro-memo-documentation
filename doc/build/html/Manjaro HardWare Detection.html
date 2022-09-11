@@ -1,51 +1,87 @@
-
 <!DOCTYPE html>
+<html class="writer-html5" lang="fr" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-<html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
-    <title>Manjaro HardWare Detection &#8212; Documentation Manjaro Memo Documentation 0.03</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
-    
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/translations.js"></script>
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manjaro HardWare Detection &mdash; Documentation Manjaro Memo Documentation 0.03</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
     <link rel="next" title="Aide" href="Aide.html" />
     <link rel="prev" title="Mise à Jour du Système" href="Mise%20%C3%A0%20jour%20syst%C3%A8me.html" /> 
-  </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="Index général"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="Aide.html" title="Aide"
-             accesskey="N">suivant</a> |</li>
-        <li class="right" >
-          <a href="Mise%20%C3%A0%20jour%20syst%C3%A8me.html" title="Mise à Jour du Système"
-             accesskey="P">précédent</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Documentation Manjaro Memo Documentation 0.03</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Manjaro HardWare Detection</a></li> 
-      </ul>
-    </div>  
+</head>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Manjaro Memo Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html#notes">Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pacman.html">Pacman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mise%20%C3%A0%20jour%20syst%C3%A8me.html">Mise à Jour du Système</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Manjaro HardWare Detection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#mhwd">MHWD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gpu">GPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mhwd-kernel">MHWD-KERNEL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interface-graphique">Interface Graphique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mais-pas-que">Mais pas que</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Aide.html">Aide</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Manjaro Memo Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Manjaro HardWare Detection</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Manjaro HardWare Detection.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
   <section id="manjaro-hardware-detection">
-<h1>Manjaro HardWare Detection<a class="headerlink" href="#manjaro-hardware-detection" title="Lien permanent vers cette rubrique">¶</a></h1>
+<h1>Manjaro HardWare Detection<a class="headerlink" href="#manjaro-hardware-detection" title="Lien permanent vers cette rubrique"></a></h1>
 <p><strong>Manjaro HardWare Detection</strong> ou plutôt <strong>mhwd</strong> comme on va l’appeler dorénavant est un outil propre à <strong>Manjaro</strong>. Sous cette appellation se cache en fait deux outils assez sympas en CLI mais aussi de manière graphique.</p>
 <ul class="simple">
 <li><p><strong>mhwd</strong> : est la commande de base, active dés le début qui permet la détection et la configuration du hardware qu’il soit pci ou usb.</p></li>
@@ -58,7 +94,7 @@
 <li><p><strong>mhwd-kernel</strong> : est la commande pour gérer son ou plutôt ses kernels. C’est une des grandes possibilités que permet <strong>Manjaro</strong> c’est d’avoir des Kernels aux pluriels. Des LTS en général et parfois aussi, des kernels intermédiaires afin de bénéficier soit de nouvelles fonctionnalités non incluses dans les LTS soit des corrections de bogues ou les deux.</p></li>
 </ul>
 <section id="mhwd">
-<h2>MHWD<a class="headerlink" href="#mhwd" title="Lien permanent vers cette rubrique">¶</a></h2>
+<h2>MHWD<a class="headerlink" href="#mhwd" title="Lien permanent vers cette rubrique"></a></h2>
 <p>Mhwd est le nouvel outil que se dote Manjaro pour gérer les pilotes usb et pci dont installation et /ou la suppression de la carte graphique toujours complexe pour le débutant et le chevronné aussi.</p>
 <p>La commande se passe soit en mode utilisateur normal soit en root à laquelle ont spécifie s’il s’agit d’un périphérique usb ou pci, puis le choix du type de pilotes cad s’il est libre ou propriétaire auquel on attribut un code à 4 chiffre, ce code correspondant à un type spécifique de hardware. Le seul code connu à ce jour (vu qu’il s’agit d’un outil en développement comme je l’ai déjà sus-cité) est celui pour l’installation des cartes graphiques qui est le 0300. Ce qui nous donne donc pour les cas suivants :</p>
 <ul>
@@ -871,6 +907,10 @@ Module Alias: « usb:v1D6Bp0003d0515dc09dsc00dp03ic09isc00ip00in00 »</p>
 <div><p><code class="docutils literal notranslate"><span class="pre">mhwd</span> <span class="pre">-li</span> <span class="pre">-d</span></code></p>
 </div></blockquote>
 <table class="docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 72%" />
+</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>Name:
 ATTACHED:
@@ -920,7 +960,7 @@ true
 </div>
 </section>
 <section id="gpu">
-<h2>GPU<a class="headerlink" href="#gpu" title="Lien permanent vers cette rubrique">¶</a></h2>
+<h2>GPU<a class="headerlink" href="#gpu" title="Lien permanent vers cette rubrique"></a></h2>
 <p>Pour identifier les pilotes graphique disponibles:</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">mhwd</span> <span class="pre">-l</span> <span class="pre">(vue</span> <span class="pre">détaillée</span> <span class="pre">optionnelle</span> <span class="pre">avec</span> <span class="pre">l'option</span> <span class="pre">-i)</span> <span class="pre">(connexion</span> <span class="pre">--pci</span> <span class="pre">ou</span> <span class="pre">--usb</span> <span class="pre">optionnelle</span> <span class="pre">aussi)</span></code></p>
@@ -986,7 +1026,7 @@ true
 </ul>
 </section>
 <section id="mhwd-kernel">
-<h2>MHWD-KERNEL<a class="headerlink" href="#mhwd-kernel" title="Lien permanent vers cette rubrique">¶</a></h2>
+<h2>MHWD-KERNEL<a class="headerlink" href="#mhwd-kernel" title="Lien permanent vers cette rubrique"></a></h2>
 <blockquote>
 <div><p>Tout ce qui touche aux Kernels est un peu tabou sur la majorité des distributions Linux. D’ailleurs, on n’a souvent qu’un Kernel d’installé, celui-qui vient avec celle-ci.</p>
 </div></blockquote>
@@ -1052,7 +1092,7 @@ true
 </ul>
 </section>
 <section id="interface-graphique">
-<h2>Interface Graphique<a class="headerlink" href="#interface-graphique" title="Lien permanent vers cette rubrique">¶</a></h2>
+<h2>Interface Graphique<a class="headerlink" href="#interface-graphique" title="Lien permanent vers cette rubrique"></a></h2>
 <p>Pour cela, il suffit d’aller dans Configuration System. Toutefois, le résultat graphique peut varier suivant l’environnement que vous utilisez.
 Dans KDE il est intégré à Configuration System tandis que sous Cinnamon il est disponible séparément.</p>
 <p>Pour KDE, mhwd (carte graphique), mhwd hardware (avec tout le hardware) puis mhwd-kernel (les kernels)</p>
@@ -1077,7 +1117,7 @@ Dans KDE il est intégré à Configuration System tandis que sous Cinnamon il es
 </figure>
 </section>
 <section id="mais-pas-que">
-<h2>Mais pas que<a class="headerlink" href="#mais-pas-que" title="Lien permanent vers cette rubrique">¶</a></h2>
+<h2>Mais pas que<a class="headerlink" href="#mais-pas-que" title="Lien permanent vers cette rubrique"></a></h2>
 <p>En Cli notre système peut nous fournir pas mal d’informations sur  le GPU.
 En voici quelques unes:</p>
 <ul class="simple">
@@ -1105,76 +1145,34 @@ En voici quelques unes:</p>
 </section>
 
 
-            <div class="clearer"></div>
+           </div>
           </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <div>
-    <h3><a href="index.html">Table des matières</a></h3>
-    <ul>
-<li><a class="reference internal" href="#">Manjaro HardWare Detection</a><ul>
-<li><a class="reference internal" href="#mhwd">MHWD</a></li>
-<li><a class="reference internal" href="#gpu">GPU</a></li>
-<li><a class="reference internal" href="#mhwd-kernel">MHWD-KERNEL</a></li>
-<li><a class="reference internal" href="#interface-graphique">Interface Graphique</a></li>
-<li><a class="reference internal" href="#mais-pas-que">Mais pas que</a></li>
-</ul>
-</li>
-</ul>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="Mise%20%C3%A0%20jour%20syst%C3%A8me.html" class="btn btn-neutral float-left" title="Mise à Jour du Système" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="Aide.html" class="btn btn-neutral float-right" title="Aide" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2019 - 2022, Olivier Girard.</p>
   </div>
-  <div>
-    <h4>Sujet précédent</h4>
-    <p class="topless"><a href="Mise%20%C3%A0%20jour%20syst%C3%A8me.html"
-                          title="Chapitre précédent">Mise à Jour du Système</a></p>
-  </div>
-  <div>
-    <h4>Sujet suivant</h4>
-    <p class="topless"><a href="Aide.html"
-                          title="Chapitre suivant">Aide</a></p>
-  </div>
-  <div role="note" aria-label="source link">
-    <h3>Cette page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/Manjaro HardWare Detection.rst.txt"
-            rel="nofollow">Montrer le code source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Recherche rapide</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="Index général"
-             >index</a></li>
-        <li class="right" >
-          <a href="Aide.html" title="Aide"
-             >suivant</a> |</li>
-        <li class="right" >
-          <a href="Mise%20%C3%A0%20jour%20syst%C3%A8me.html" title="Mise à Jour du Système"
-             >précédent</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Documentation Manjaro Memo Documentation 0.03</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Manjaro HardWare Detection</a></li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-        &#169; Copyright 2019 - 2022, Olivier Girard.
-      Créé en utilisant <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
-    </div>
-  </body>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
 </html>

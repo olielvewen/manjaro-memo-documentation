@@ -1,54 +1,93 @@
-
 <!DOCTYPE html>
+<html class="writer-html5" lang="fr" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-<html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
-    <title>Pacman &#8212; Documentation Manjaro Memo Documentation 0.03</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
-    
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/translations.js"></script>
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pacman &mdash; Documentation Manjaro Memo Documentation 0.03</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
     <link rel="next" title="Mise à Jour du Système" href="Mise%20%C3%A0%20jour%20syst%C3%A8me.html" />
     <link rel="prev" title="Introduction" href="Introduction.html" /> 
-  </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="Index général"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="Mise%20%C3%A0%20jour%20syst%C3%A8me.html" title="Mise à Jour du Système"
-             accesskey="N">suivant</a> |</li>
-        <li class="right" >
-          <a href="Introduction.html" title="Introduction"
-             accesskey="P">précédent</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Documentation Manjaro Memo Documentation 0.03</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Pacman</a></li> 
-      </ul>
-    </div>  
+</head>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Manjaro Memo Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html#notes">Notes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Pacman</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#synchronisation-avec-les-depots-de-manjaro">Synchronisation avec les dépôts de Manjaro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mettre-a-jour-le-systeme">Mettre à jour le système</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rechercher-un-paquet">Rechercher un paquet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installer-un-logiciel">Installer un logiciel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desinstaller-un-logiciel">Désinstaller un logiciel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#information-sur-un-paquet">Information sur un paquet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nettoyer-son-cache">Nettoyer son cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installer-un-paquet-hors-depot">Installer un paquet hors dépôt</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Mise%20%C3%A0%20jour%20syst%C3%A8me.html">Mise à Jour du Système</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Manjaro%20HardWare%20Detection.html">Manjaro HardWare Detection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Aide.html">Aide</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Manjaro Memo Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Pacman</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Pacman.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
   <section id="pacman">
-<h1>Pacman<a class="headerlink" href="#pacman" title="Lien permanent vers cette rubrique">¶</a></h1>
+<h1>Pacman<a class="headerlink" href="#pacman" title="Lien permanent vers cette rubrique"></a></h1>
 <p><strong>Pacman</strong> (non ce n’est pas une blague, les developpeurs étant de grands enfants) est le nom du gestionnaire de paquets. C’est un outil en ligne de commande très puissant puisqu’il peut tout installer ou presque., les paquets venant d”<strong>Aur</strong> (Arch User Repository) sont à parts et eux nécessitent d’utiliser un autre gestionnaire. En ce qui me concerne, depuis que <strong>Yaourt</strong> est mort (eh oui c’est pas encore une blague) ce sera <strong>Yay</strong> le bien nommé, très proche de feux Yaourt.</p>
 <section id="synchronisation-avec-les-depots-de-manjaro">
-<h2>Synchronisation avec les dépôts de Manjaro<a class="headerlink" href="#synchronisation-avec-les-depots-de-manjaro" title="Lien permanent vers cette rubrique">¶</a></h2>
+<h2>Synchronisation avec les dépôts de Manjaro<a class="headerlink" href="#synchronisation-avec-les-depots-de-manjaro" title="Lien permanent vers cette rubrique"></a></h2>
 <p>C’est l’étape incontournable à faire en premier avant d’installer ou de mettre à jour la distribution. On synchronise la liste des dépôts locaux de notre ordinateur avec celui des serveurs. A ce stade, on suppose que vous avez soit choisi vos propres dépôts, généralement plus proches de chez vous et donc plus rapide soit la totalité des dépôts.</p>
 <p>Une synchronisation normale se fait de cette manière</p>
 <p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pacman</span> <span class="pre">-Sy</span></code></p>
@@ -56,7 +95,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pacman</span> <span class="pre">-Syy</span></code></p>
 </section>
 <section id="mettre-a-jour-le-systeme">
-<h2>Mettre à jour le système<a class="headerlink" href="#mettre-a-jour-le-systeme" title="Lien permanent vers cette rubrique">¶</a></h2>
+<h2>Mettre à jour le système<a class="headerlink" href="#mettre-a-jour-le-systeme" title="Lien permanent vers cette rubrique"></a></h2>
 <p>Le commande de base est</p>
 <p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pacman</span> <span class="pre">-Su</span></code></p>
 <p>Si les mainteneurs des paquets ont fait régréssé certains de ceux-ci, il est utilse de faire alors</p>
@@ -75,17 +114,17 @@
 <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pacman</span> <span class="pre">-Syyuu</span></code></p>
 </section>
 <section id="rechercher-un-paquet">
-<h2>Rechercher un paquet<a class="headerlink" href="#rechercher-un-paquet" title="Lien permanent vers cette rubrique">¶</a></h2>
+<h2>Rechercher un paquet<a class="headerlink" href="#rechercher-un-paquet" title="Lien permanent vers cette rubrique"></a></h2>
 <p>Pour cela, on va lancer une recherche avec un mot clé qui est généralement le nom du logiciel, même une partie de celui-ci ou encore sa description.</p>
 <p><code class="docutils literal notranslate"><span class="pre">pacman</span> <span class="pre">-Ss</span> <span class="pre">monlogicielrecherché</span></code></p>
 </section>
 <section id="installer-un-logiciel">
-<h2>Installer un logiciel<a class="headerlink" href="#installer-un-logiciel" title="Lien permanent vers cette rubrique">¶</a></h2>
+<h2>Installer un logiciel<a class="headerlink" href="#installer-un-logiciel" title="Lien permanent vers cette rubrique"></a></h2>
 <p>Une fois le ou les paquet(s) trouvé(s) (sauf si on connaît déjà son nom), on peut l’installer de la manière suivante:</p>
 <p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pacman</span> <span class="pre">-S</span> <span class="pre">monlogicieltrouvé</span> <span class="pre">unautrelogicieltrouvé</span></code></p>
 </section>
 <section id="desinstaller-un-logiciel">
-<h2>Désinstaller un logiciel<a class="headerlink" href="#desinstaller-un-logiciel" title="Lien permanent vers cette rubrique">¶</a></h2>
+<h2>Désinstaller un logiciel<a class="headerlink" href="#desinstaller-un-logiciel" title="Lien permanent vers cette rubrique"></a></h2>
 <p>La désinstallation classique se fait comme cela:</p>
 <p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pacman</span> <span class="pre">-R</span> <span class="pre">monlogicielaenlever</span></code></p>
 <p>Parfois voir souvent, pacman a installé d’autres paquets comme dépendance du premier nécessaire à son bon fonctionnement. Il est alors utile de tout désinstaller en même temps et sans se souvenir/connaître le nom des ces paquets.</p>
@@ -96,7 +135,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pacman</span> <span class="pre">-Rdd</span> <span class="pre">qpdfview</span></code></p>
 </section>
 <section id="information-sur-un-paquet">
-<h2>Information sur un paquet<a class="headerlink" href="#information-sur-un-paquet" title="Lien permanent vers cette rubrique">¶</a></h2>
+<h2>Information sur un paquet<a class="headerlink" href="#information-sur-un-paquet" title="Lien permanent vers cette rubrique"></a></h2>
 <p>Pour une raison (un soucis) ou une autre (curiosité), on a besoin de savoir quel est la version de notre paquet installé.</p>
 <p><code class="docutils literal notranslate"><span class="pre">pacman</span> <span class="pre">-Qi</span> <span class="pre">popplet-qt5</span></code></p>
 <p>Si l’on veut connaître la liste des fichiers appartenant à un paquet, on utilise:</p>
@@ -143,14 +182,14 @@ Dans ce cas on peut faire comme pour virtualbox par exemple qui vient assez nomb
 <p><code class="docutils literal notranslate"><span class="pre">pacman</span> <span class="pre">-Si</span> <span class="pre">xorgproto</span></code></p>
 </section>
 <section id="nettoyer-son-cache">
-<h2>Nettoyer son cache<a class="headerlink" href="#nettoyer-son-cache" title="Lien permanent vers cette rubrique">¶</a></h2>
+<h2>Nettoyer son cache<a class="headerlink" href="#nettoyer-son-cache" title="Lien permanent vers cette rubrique"></a></h2>
 <p>Par défaut, pacman conserve les paquets installés dans <em>/var/cache/pacman/pkg</em>. Ce qui au bout d’un moment va vite devenir rempli. Il est donc necessaire de faire un peu le ménage de la manière suivante:</p>
 <p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pacman</span> <span class="pre">-Sc</span></code></p>
 <p>On peut aussi vider entièrement le cache sans rien conserver.</p>
 <p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pacman</span> <span class="pre">-Scc</span></code></p>
 </section>
 <section id="installer-un-paquet-hors-depot">
-<h2>Installer un paquet hors dépôt<a class="headerlink" href="#installer-un-paquet-hors-depot" title="Lien permanent vers cette rubrique">¶</a></h2>
+<h2>Installer un paquet hors dépôt<a class="headerlink" href="#installer-un-paquet-hors-depot" title="Lien permanent vers cette rubrique"></a></h2>
 <p>Cette situation doit être exceptionnelle. Bien entendu, ni les dépôts de <strong>Manjaro</strong>, ni <strong>AUR</strong> ne peuvent nous aider. Elle peut survenir quand on a un soucis ou bien quand on a un besoin express de ce paquet. Dans ce cas, on crée un PKBUILD puis on crée le paquet. Et enfin, on installe ce paquet hors dépôt avec cette commande.</p>
 <p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pacman</span> <span class="pre">-U</span> <span class="pre">cheminversmonpaquet/nomdupaquetcrée-any.pkg.tar.xz</span></code></p>
 <div class="admonition important">
@@ -165,79 +204,34 @@ Dans ce cas on peut faire comme pour virtualbox par exemple qui vient assez nomb
 </section>
 
 
-            <div class="clearer"></div>
+           </div>
           </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <div>
-    <h3><a href="index.html">Table des matières</a></h3>
-    <ul>
-<li><a class="reference internal" href="#">Pacman</a><ul>
-<li><a class="reference internal" href="#synchronisation-avec-les-depots-de-manjaro">Synchronisation avec les dépôts de Manjaro</a></li>
-<li><a class="reference internal" href="#mettre-a-jour-le-systeme">Mettre à jour le système</a></li>
-<li><a class="reference internal" href="#rechercher-un-paquet">Rechercher un paquet</a></li>
-<li><a class="reference internal" href="#installer-un-logiciel">Installer un logiciel</a></li>
-<li><a class="reference internal" href="#desinstaller-un-logiciel">Désinstaller un logiciel</a></li>
-<li><a class="reference internal" href="#information-sur-un-paquet">Information sur un paquet</a></li>
-<li><a class="reference internal" href="#nettoyer-son-cache">Nettoyer son cache</a></li>
-<li><a class="reference internal" href="#installer-un-paquet-hors-depot">Installer un paquet hors dépôt</a></li>
-</ul>
-</li>
-</ul>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="Introduction.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="Mise%20%C3%A0%20jour%20syst%C3%A8me.html" class="btn btn-neutral float-right" title="Mise à Jour du Système" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2019 - 2022, Olivier Girard.</p>
   </div>
-  <div>
-    <h4>Sujet précédent</h4>
-    <p class="topless"><a href="Introduction.html"
-                          title="Chapitre précédent">Introduction</a></p>
-  </div>
-  <div>
-    <h4>Sujet suivant</h4>
-    <p class="topless"><a href="Mise%20%C3%A0%20jour%20syst%C3%A8me.html"
-                          title="Chapitre suivant">Mise à Jour du Système</a></p>
-  </div>
-  <div role="note" aria-label="source link">
-    <h3>Cette page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/Pacman.rst.txt"
-            rel="nofollow">Montrer le code source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Recherche rapide</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="Index général"
-             >index</a></li>
-        <li class="right" >
-          <a href="Mise%20%C3%A0%20jour%20syst%C3%A8me.html" title="Mise à Jour du Système"
-             >suivant</a> |</li>
-        <li class="right" >
-          <a href="Introduction.html" title="Introduction"
-             >précédent</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Documentation Manjaro Memo Documentation 0.03</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Pacman</a></li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-        &#169; Copyright 2019 - 2022, Olivier Girard.
-      Créé en utilisant <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
-    </div>
-  </body>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
 </html>
