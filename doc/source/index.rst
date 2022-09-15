@@ -24,6 +24,7 @@ Et rentrons maintenant dans le vif du sujet.
    Pacman
    Mise à jour système
    Manjaro HardWare Detection
+   matériel
    Aide
 
 
