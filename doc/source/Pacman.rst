@@ -110,7 +110,7 @@ La solution serait de mettre dans une pipe qui recherchera tout ce qui concerne 
   * ``sudo gpasswd -a $USER vboxusers``
   
 2. ``sudo vboxreload``
-3. vboxmanage --version`` nous donne la version de virtualbox en cours
+3. ``vboxmanage --version`` nous donne la version de virtualbox en cours
 
 
 .. NOTE:: Pour connaître tous les services démarré de Virtualbox. ``systemctl status virtualbox``
