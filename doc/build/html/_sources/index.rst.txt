@@ -18,11 +18,11 @@ Et rentrons maintenant dans le vif du sujet.
 
 .. toctree::
    :maxdepth: 4
-   :caption: Contents:
+   :caption: Contenu:
    
    Introduction
    Pacman
-   Mise à jour système
+   maj
    Manjaro HardWare Detection
    grub
    matériel
