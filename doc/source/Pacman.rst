@@ -92,14 +92,14 @@ Si l'on veut connaître la liste des fichiers appartenant à un paquet, on utili
 
 Si on a un groupe de paquets installés qui commencent tous par monnompaquet-*.
 Dans ce cas on peut faire comme pour virtualbox par exemple qui vient assez nombreux car on a:
-	* linux515-virtualbox-guest-modules
-	* linux515-virtualbox-host-modules
-	* virtualbox
-	* virtualbox-ext-oracle
-	* virtualbox-ext-vnc
-	* virtualbox-guest-iso
-	* virtualbox-guest-utils
-	* virtualbox-host-dkms
+* linux515-virtualbox-guest-modules
+* linux515-virtualbox-host-modules
+* virtualbox
+* virtualbox-ext-oracle
+* virtualbox-ext-vnc
+* virtualbox-guest-iso
+* virtualbox-guest-utils
+* virtualbox-host-dkms
 	
 La solution serait de mettre dans une pipe qui recherchera tout ce qui concerne Virtualbox.
 
