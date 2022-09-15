@@ -19,7 +19,9 @@
         <script src="_static/translations.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Recherche" href="search.html" /> 
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Materiel" href="mat%C3%A9riel.html" />
+    <link rel="prev" title="Manjaro HardWare Detection" href="Manjaro%20HardWare%20Detection.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -38,12 +40,17 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html#notes">Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Pacman.html">Pacman</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Mise%20%C3%A0%20jour%20syst%C3%A8me.html">Mise à Jour du Système</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Manjaro%20HardWare%20Detection.html">Manjaro HardWare Detection</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">GRUB chargeur de démarrage Linux</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#astuces">Astuces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mat%C3%A9riel.html">Materiel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aide.html">Aide</a></li>
 </ul>
 
@@ -63,7 +70,7 @@
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
       <li>GRUB chargeur de démarrage Linux</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/grub.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+            <a href="_sources/grub.md.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
   </ul>
   <hr/>
@@ -73,73 +80,86 @@
              
   <section id="grub-chargeur-de-demarrage-linux">
 <h1>GRUB chargeur de démarrage Linux<a class="headerlink" href="#grub-chargeur-de-demarrage-linux" title="Lien permanent vers cette rubrique"></a></h1>
-<p>GRand unified Bootloader (GRUB) est un chargeur de démarrage et la version actuelle est GRUB 2, prenant en charge l’EUFI (ou UFi) et le mbr .
+<p><strong>GRand unified Bootloader (GRUB)</strong> est un chargeur de démarrage et la version actuelle est GRUB 2, prenant en charge l’EUFI (ou UFi) et le mbr .
 Ce chargeur de démarrage permet de démarrer un ou plusieurs système qu’ils soient Linux, BSD et même Windows.
 On peut spécifier un certain nombre d’opérations comme paramétrer un temps d’affichage ou non, personnaliser le menu, avoir ou pas tous les noyaux disponibles afin d’en selectionner un, de charger un module spécifique par exemple le module intel pour utiliser le pilote libre intel pour les GPU Arc, etc.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>il est préférable de faire une copie de sauvegarde avant de modifier le menu de GRUB</p>
+<p>Il est préférable de faire une copie de sauvegarde avant de modifier le menu de GRUB</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Avertissement</p>
-<p>Il faut toujours regénérer Grub avec la commande “””sudo update-grub””” sous peine de ne plus avoir de GRUB et d’être alors obligé de Chrooter pour le récupérer en passant dans un terminal la commande précédante.</p>
+<p>Il faut toujours regénérer Grub avec la commande  <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">update-grub</span></code> sous peine de ne plus avoir de GRUB et d’être alors obligé de Chrooter pour le récupérer en passant dans un terminal la commande précédante.</p>
 </div>
-<dl class="simple">
-<dt>Mais commençons par le début. Il faut d’abord connaître exactement ses partitions à l’aide de la commande:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">fdisk</span> <span class="pre">-l</span></code></p>
-</dd>
-<dt>Pour lire le fichier grub:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">/etc/default/grub</span></code></p>
-</dd>
-<dt>On peut aussi utiliser cette commande:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">grep</span> <span class="pre">&quot;^[^#*/;]&quot;</span> <span class="pre">/etc/default/grub</span></code></p>
-</dd>
-<dt>Pour sauvegarder le fichier grub:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">cp</span> <span class="pre">/etc/default/grub</span> <span class="pre">/etc/default/grub.</span></code></p>
-</dd>
-</dl>
-</section>
+<p>Mais commençons par le début. Il faut d’abord connaître exactement ses partitions à l’aide de la commande:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo fdisk -l
+</pre></div>
+</div>
+<p>Pour lire le fichier grub:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cat /etc/default/grub
+</pre></div>
+</div>
+<p>On peut aussi utiliser cette commande:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo grep &quot;^[^#*/;]&quot; /etc/default/grub
+</pre></div>
+</div>
+<p>Pour sauvegarder le fichier grub:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo cp /etc/default/grub /etc/default/grub
+</pre></div>
+</div>
 <section id="astuces">
-<h1>Astuces<a class="headerlink" href="#astuces" title="Lien permanent vers cette rubrique"></a></h1>
+<h2>Astuces<a class="headerlink" href="#astuces" title="Lien permanent vers cette rubrique"></a></h2>
 <p>Voici une série d’astuces qui pourront vous êtres utiles.</p>
 <ul class="simple">
 <li><p>Faire apparaître les différents noyaux</p></li>
 </ul>
 <p>Si vous utilisez KDE cet astuce peut vous être utile alors qu’il serait inutile si vous utilisez Cinnamon.</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p>On appuie sur la touche Esc après la disparition du splash</p></li>
-<li><p>On peut aussi éditer, modifier puis regenérer Grub afin d’éviter d’avoir à chaque fois appuyer sur Esc quand on veut selectionner un noyau différent.</p></li>
-</ol>
-</div></blockquote>
-<dl class="simple">
-<dt>Pour cela, avec votre Editeur/IDE préféré (kate, nano, geany,…),</dt><dd><p><code class="docutils literal notranslate"><span class="pre">kate</span> <span class="pre">/etc/default/grub</span></code></p>
-</dd>
-<dt>On édite ici le style du menu en tant qu’exemple</dt><dd><p><code class="docutils literal notranslate"><span class="pre">GRUB_TIMEOUT_STYLE</span> <span class="pre">=</span> <span class="pre">menu</span></code></p>
-</dd>
-<dt>On met à jour grub avec:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">update-grub</span></code></p>
-</dd>
-</dl>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1. On appuie sur la touche Esc après la disparition du splash
+2. On peut aussi éditer, modifier puis regenérer Grub afin d&#39;éviter d&#39;avoir à chaque fois appuyer sur Esc quand on veut selectionner un noyau différent.
+</pre></div>
+</div>
+<p>Pour cela, avec votre Editeur/IDE préféré (kate, nano, geany,…), prenons Kate:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>kate /etc/default/grub
+</pre></div>
+</div>
+<p>On édite ici le style du menu en tant qu’exemple</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>GRUB_TIMEOUT_STYLE = menu
+</pre></div>
+</div>
+<p>On met à jour grub avec:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo update-grub
+</pre></div>
+</div>
 <ul class="simple">
 <li><p>Changer une valeur: ici le temps d’affichage de grub avant de basculer sur le noyau par defaut et donc de démarrer le système</p></li>
 </ul>
-<dl class="simple">
-<dt>On change la valeur de 5 par defaut à 10:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">GRUB_TIMEOUT</span> <span class="pre">=</span> <span class="pre">10</span></code></p>
-</dd>
-<dt>puis on reconstruit grub car c’est un fichier de bas niveau avec:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">grub-mkconfig</span> <span class="pre">-o</span> <span class="pre">/boot/grub/grub.cfg</span></code></p>
-</dd>
-</dl>
+<p>On change la valeur de 5 par defaut à 10:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>GRUB_TIMEOUT = 10
+</pre></div>
+</div>
+<p>puis on reconstruit grub car c’est un fichier de bas niveau avec:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo grub-mkconfig -o /boot/grub/grub.cfg
+</pre></div>
+</div>
 <p>Et on reboot pour voir si la modification a bien été prise en compte.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Avec Nano, on descend en bas du fichier une fois les modifications faites puis Ctrl + X pour sortir du mode édition, la lettre &lt;O&gt; pour oui puis entré.</p>
+<p>Avec Nano, on descend en bas du fichier une fois les modifications faites puis Ctrl + X pour sortir du mode édition, la lettre <O> pour oui puis entré.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>En vrac pour l’instant: <code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">/boot/grub/grubenv</span></code> et <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-lA</span> <span class="pre">/boot/grub/grubenv</span></code></p>
 </div>
 </section>
+</section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="Manjaro%20HardWare%20Detection.html" class="btn btn-neutral float-left" title="Manjaro HardWare Detection" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="mat%C3%A9riel.html" class="btn btn-neutral float-right" title="Materiel" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
