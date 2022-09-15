@@ -21,7 +21,6 @@ Et rentrons maintenant dans le vif du sujet.
    :caption: Contenu:
    
    Introduction
-   Pacman
    maj
    Manjaro HardWare Detection
    grub
