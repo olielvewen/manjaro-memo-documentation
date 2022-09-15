@@ -15,6 +15,6 @@ Commençons donc notre exploration par le premier d'entre eux : **Pacman**
    :maxdepth: 4
    :titlesonly:
 
-   Pacman
+   pacman
    pamac
    aur
