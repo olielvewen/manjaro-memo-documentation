@@ -147,6 +147,6 @@ Cette situation doit être exceptionnelle. Bien entendu, ni les dépôts de **Ma
 ``sudo pacman -U cheminversmonpaquet/nomdupaquetcrée-any.pkg.tar.xz``
 
 
-.. IMPORTANT:: Cette méthode à l'avantage d'installer et de dé-s’installer proprement le logiciel en question. C'est recommandé mais à faire le moins possible.
+.. IMPORTANT:: Cette méthode à l'avantage d'installer et de désinstaller proprement le logiciel en question. C'est recommandé mais à faire le moins possible.
 
 .. NOTE:: Le chemin est à adapter par rapport à l'endroit où vous avez ouvert votre terminal.

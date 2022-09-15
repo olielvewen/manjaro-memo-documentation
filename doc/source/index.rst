@@ -13,6 +13,9 @@ Comme Archlinux est difficile pour le plus grand nombre, Philipp Muller, un alle
 
 Et rentrons maintenant dans le vif du sujet.
 
+| Auteur:   Olivier Girard
+| Dernière Mise à Jour:   |today|
+
 .. toctree::
    :maxdepth: 4
    :caption: Contents:
