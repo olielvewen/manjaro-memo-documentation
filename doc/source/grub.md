@@ -1,5 +1,6 @@
 # GRUB chargeur de démarrage Linux
 
+## Introduction
 
 **GRand unified Bootloader (GRUB)** est un chargeur de démarrage et la version actuelle est GRUB 2, prenant en charge l'EUFI (ou UFi) et le mbr .
 Ce chargeur de démarrage permet de démarrer un ou plusieurs système qu'ils soient Linux, BSD et même Windows.
