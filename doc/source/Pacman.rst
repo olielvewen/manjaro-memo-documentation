@@ -92,6 +92,8 @@ Si l'on veut connaître la liste des fichiers appartenant à un paquet, on utili
 
 Si on a un groupe de paquets installés qui commencent tous par monnompaquet-*.
 Dans ce cas on peut faire comme pour virtualbox par exemple qui vient assez nombreux car on a:
+
+
 * linux515-virtualbox-guest-modules
 * linux515-virtualbox-host-modules
 * virtualbox
