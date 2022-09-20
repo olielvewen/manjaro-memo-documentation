@@ -17,4 +17,5 @@ Commençons donc notre exploration par le premier d'entre eux : **Pacman**
 
    pacman
    pamac
+   octopi
    aur
