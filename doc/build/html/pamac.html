@@ -20,7 +20,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Manjaro HardWare Detection" href="Manjaro%20HardWare%20Detection.html" />
+    <link rel="next" title="Octopi" href="octopi.html" />
     <link rel="prev" title="Pacman" href="pacman.html" /> 
 </head>
 
@@ -47,8 +47,17 @@
 <li class="toctree-l2"><a class="reference internal" href="pacman.html">Pacman</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Pamac</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pamac-gui">Pamac GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#preferences">Preférences</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#general">Général</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#avance">Avançé</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tierces-parties">Tierces parties</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#pour-conclure">Pour conclure</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="octopi.html">Octopi</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Manjaro%20HardWare%20Detection.html">Manjaro HardWare Detection</a></li>
@@ -86,7 +95,65 @@
 <h1>Pamac<a class="headerlink" href="#pamac" title="Lien permanent vers cette rubrique"></a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers cette rubrique"></a></h2>
-<p><em><strong>Pamac</strong></em> est un outil propre à Manjaro.</p>
+<p>Développé depuis 7 ans par le Français Guillaume Benoît en Vala et GTK3 pour l’interface graphique, <a class="reference external" href="https://gitlab.manjaro.org/applications/pamac/"><strong>Pamac</strong></a> est un outil propre à <strong>Manjaro</strong>. Non seulement il permet
+d’installer, de les supprimer, de mettre à jour le système et les applications déjà installées, mais il permet aussi de faire la même chose pour <strong>AUR</strong>,
+les <strong>appimages</strong>, les <strong>flatpak</strong> et les <strong>snaps</strong>. Il se base sur la bibliothèque d’Archlinux : libalpm.</p>
+<p>Pour être plus précis, il s’agit d’un ensemble d’outils, à savoir:</p>
+<ul class="simple">
+<li><p>un outil en CLI</p></li>
+<li><p>une interface graphique en GTK3 : <strong>pamac-manager</strong></p></li>
+<li><p>une icône dans le systray avec notification de maj : <strong>pamac-tray</strong></p></li>
+<li><p>un AppIndicator avec notification de maj : <strong>pamac-appindicator-tray</strong></p></li>
+<li><p>une extension gnome-shell : <strong>pamac updates indicator</strong></p></li>
+</ul>
+</section>
+<section id="pamac-gui">
+<h2>Pamac GUI<a class="headerlink" href="#pamac-gui" title="Lien permanent vers cette rubrique"></a></h2>
+<p>L’interface est à mi-chemin entre un App Store et un Octopi.</p>
+<p>A gauche, un bandeau précise la provenance des paquets (officiels, AUR, …) et leur état (installés, orphelins, étrangers).
+Nous avons ensuite une partie centrale avec 3 onglets : Naviguer, Installer et MAJ.
+Sans entrer dans les détails tant leurs noms sont explicites, nous pouvons nous aider aussi d’une barre de recherche tout à
+gauche afin de pouvoir localiser un logiciel en particulier.</p>
+<p>Voici la série de captures d’écran montrant chacun des onglets de l’interface principale.</p>
+</section>
+<section id="preferences">
+<h2>Preférences<a class="headerlink" href="#preferences" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Lors du 1er lancement de l’interface, il faut d’abord faire un tour dans les Préférences afin d’activer de nombreux paramètres
+dont notamment le support pour AUR mais pas que. Elle se décompose en trois onglets : <strong>Général</strong>, <strong>Avancé</strong> et <strong>Tierces parties</strong>.</p>
+<section id="general">
+<h3>Général<a class="headerlink" href="#general" title="Lien permanent vers cette rubrique"></a></h3>
+<p>On a accès à trois sous-catégories.</p>
+<ul class="simple">
+<li><p>Les MAJ avec la possibilité de les vérifier ainsi que leurs fréquences. On peut aussi masquer l’icône s’il n’y a aucune maj.</p></li>
+<li><p>On peut spécifier le nombre de téléchargements parallèles fixés à 4 par default</p></li>
+<li><p>Enfin, on choisit parmi les miroirs officiels : Allemagne par défaut</p></li>
+</ul>
+</section>
+<section id="avance">
+<h3>Avançé<a class="headerlink" href="#avance" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Ici, on a deux sous-catégories :</p>
+<ul class="simple">
+<li><p>On configure le bon fonctionnement du système en évitant notamment la catastrophe s’il n’y a pas assez de place disponible pour une maj.</p></li>
+<li><p>On peut ignorer des maj.</p></li>
+</ul>
+</section>
+<section id="tierces-parties">
+<h3>Tierces parties<a class="headerlink" href="#tierces-parties" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Enfin, on a trois sous-catégories qui offrent l’immense possibilité d’êtendre drastiquement le nombre de logiciels disponibles :</p>
+<ul class="simple">
+<li><p>La prise en charge des paquets provenant d” <strong>AUR</strong> avec la possibilité de paramétrer plus finement le comportement vis à vis de ce dépôt hors-norme.</p></li>
+<li><p>La prise en charge des <strong>Flatpak</strong></p></li>
+<li><p>La prise en charge des <strong>Snap</strong></p></li>
+</ul>
+</section>
+</section>
+<section id="pour-conclure">
+<h2>Pour conclure<a class="headerlink" href="#pour-conclure" title="Lien permanent vers cette rubrique"></a></h2>
+<p><strong>Pamac</strong> est un bon logiciel cependant il souffre, par experience, de certains problèmes pour désinstaller
+proprement un logiciel. Certaines traces persistent et il vaut mieux le faire en CLI soit avec pacman, soit avec Yay pour les
+paquets provenant d’AUR. Certes, quelquefois il bugue, mais la communauté est active et il évolue rapidement. Sans parler,
+que seul un développeur permet à ce projet d’exister. Et comme le bon vin, il ne cesse de s’améliorer au fil du temps de version
+en version.</p>
 </section>
 </section>
 
@@ -95,7 +162,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
         <a href="pacman.html" class="btn btn-neutral float-left" title="Pacman" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="Manjaro%20HardWare%20Detection.html" class="btn btn-neutral float-right" title="Manjaro HardWare Detection" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="octopi.html" class="btn btn-neutral float-right" title="Octopi" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
