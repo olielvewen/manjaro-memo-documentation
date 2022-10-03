@@ -15,13 +15,20 @@ Pour être plus précis, il s'agit d'un ensemble d'outils, à savoir:
 ## Pamac GUI
 L'interface est à mi-chemin entre un App Store et un Octopi. 
 
+![pamac](images/pamac1.png)
+
 A gauche, un bandeau précise la provenance des paquets (officiels, AUR, ...) et leur état (installés, orphelins, étrangers).
 Nous avons ensuite une partie centrale avec 3 onglets : Naviguer, Installer et MAJ.
 Sans entrer dans les détails tant leurs noms sont explicites, nous pouvons nous aider aussi d'une barre de recherche tout à 
 gauche afin de pouvoir localiser un logiciel en particulier. 
 
-Voici la série de captures d'écran montrant chacun des onglets de l'interface principale.
+L'onglet Installer
 
+![pamac](images/pamac2.png)
+
+L'onglet Maj avec 3 maj à faire
+
+![pamac](images/pamac3.png)
 
 ## Preférences
 Lors du 1er lancement de l'interface, il faut d'abord faire un tour dans les Préférences afin d'activer de nombreux paramètres 
