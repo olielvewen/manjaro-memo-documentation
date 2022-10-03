@@ -40,10 +40,14 @@ On a accès à trois sous-catégories.
 - On peut spécifier le nombre de téléchargements parallèles fixés à 4 par default
 - Enfin, on choisit parmi les miroirs officiels : Allemagne par défaut 
 
+![pamac](images/pamacpref1.png)
+
 ### Avançé
 Ici, on a deux sous-catégories :
 - On configure le bon fonctionnement du système en évitant notamment la catastrophe s'il n'y a pas assez de place disponible pour une maj.
 - On peut ignorer des maj.
+
+![pamac](images/pamacpref2.png)
 
 ### Tierces parties
 Enfin, on a trois sous-catégories qui offrent l'immense possibilité d'êtendre drastiquement le nombre de logiciels disponibles :
@@ -51,7 +55,7 @@ Enfin, on a trois sous-catégories qui offrent l'immense possibilité d'êtendre
 - La prise en charge des **Flatpak**
 - La prise en charge des **Snap**
 
-
+![pamac](images/pamacpref3.png)
 
 ## Pour conclure
 **Pamac** est un bon logiciel cependant il souffre, par experience, de certains problèmes pour désinstaller
